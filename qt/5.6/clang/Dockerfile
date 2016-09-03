@@ -1,6 +1,6 @@
-FROM gorzechowski/clang
+FROM gorzechowski/clang:xenial
 
-RUN add-apt-repository -y ppa:beineri/opt-qt561-trusty
+RUN add-apt-repository -y ppa:beineri/opt-qt561-xenial
 
 RUN apt-get update && apt-get -y install \
     qt56base \

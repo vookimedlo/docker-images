@@ -7,6 +7,7 @@ RUN add-apt-repository -y ppa:h-rayflood/llvm
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
     clang-3.4 \
     make \
+    cmake \
     subversion
 
 RUN ln -sf /usr/bin/clang++-3.4 /usr/bin/clang++ && ln -sf /usr/bin/clang-3.4 /usr/bin/clang

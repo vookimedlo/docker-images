@@ -1,6 +1,6 @@
 FROM gorzechowski/gcc:xenial
 
-RUN add-apt-repository -y ppa:beineri/opt-qt561-xenial
+RUN add-apt-repository -y ppa:beineri/opt-qt562-xenial
 
 RUN apt-get update && apt-get -y install \
     qt56base \

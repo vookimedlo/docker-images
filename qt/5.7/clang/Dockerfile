@@ -1,6 +1,6 @@
 FROM gorzechowski/clang:xenial
 
-RUN add-apt-repository -y ppa:beineri/opt-qt57-xenial
+RUN add-apt-repository -y ppa:beineri/opt-qt571-xenial
 
 RUN apt-get update && apt-get -y install \
     qt57base \

@@ -1,4 +1,4 @@
-FROM vookimedlo/clang:xenial
+FROM vookimedlo/ubuntu-clang:clang_xenial
 
 RUN add-apt-repository -y ppa:beineri/opt-qt-5.10.0-xenial
 RUN apt-get update -qq

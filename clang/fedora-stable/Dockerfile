@@ -5,3 +5,6 @@ RUN yum -y install \
     make           \
     cmake          \
     git
+
+RUN echo "export CXX=clang++" >> /etc/profile
+RUN echo "export CC=clang" >> /etc/profile

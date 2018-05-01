@@ -1,6 +1,6 @@
 FROM vookimedlo/ubuntu-gcc:gcc_xenial
 
-RUN add-apt-repository -y ppa:beineri/opt-qt-5.10.0-xenial
+RUN add-apt-repository -y ppa:beineri/opt-qt-5.10.1-xenial
 RUN apt-get update -qq
 RUN apt-get -y install qt510-meta-minimal
 

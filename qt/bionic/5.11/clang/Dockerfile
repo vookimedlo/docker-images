@@ -1,6 +1,6 @@
-FROM vookimedlo/ubuntu-clang:clang_xenial
+FROM vookimedlo/ubuntu-clang:clang_bionic
 
-RUN add-apt-repository -y ppa:beineri/opt-qt-5.11.0-xenial
+RUN add-apt-repository -y ppa:beineri/opt-qt-5.11.0-bionic
 RUN apt-get update -qq
 RUN apt-get -y install qt511-meta-minimal
 

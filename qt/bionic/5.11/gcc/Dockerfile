@@ -1,6 +1,6 @@
 FROM vookimedlo/ubuntu-gcc:gcc_bionic
 
-RUN add-apt-repository -y ppa:beineri/opt-qt-5.11.1-bionic
+RUN add-apt-repository -y ppa:beineri/opt-qt-5.11.3-bionic
 RUN apt-get update -qq
 RUN apt-get -y install qt511-meta-minimal
 

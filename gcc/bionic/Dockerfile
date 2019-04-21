@@ -8,3 +8,14 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     make  \
     cmake \
     git
+
+RUN apt-get update && apt-get -y --allow-unauthenticated install \
+    checkinstall \
+    build-essential \
+    automake \
+    autoconf \
+    libtool \
+    pkg-config \
+    dh-make \
+    bzr-builddeb \
+    git-buildpackage

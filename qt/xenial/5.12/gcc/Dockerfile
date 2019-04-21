@@ -1,6 +1,6 @@
 FROM vookimedlo/ubuntu-gcc:gcc_xenial
 
-RUN add-apt-repository -y ppa:beineri/opt-qt-5.12.2-xenial
+RUN add-apt-repository -y ppa:beineri/opt-qt-5.12.3-xenial
 RUN apt-get update -qq
 RUN apt-get -y install qt512-meta-minimal
 

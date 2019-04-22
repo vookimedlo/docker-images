@@ -1,5 +1,7 @@
 FROM debian:stable
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get -y install software-properties-common
 
 RUN apt-get update && apt-get -y --allow-unauthenticated install \

@@ -6,7 +6,7 @@ RUN apt-get -y install qt512-meta-minimal
 
 # This one is for "GL/gl.h", which is required by Qt
 #
-RUN apt-get -y install mesa-common-dev
+RUN apt-get -y install mesa-common-dev libglvnd-dev
 
 RUN echo "source /opt/qt512/bin/qt512-env.sh" >> /etc/profile
 RUN echo "export CMAKE_PREFIX_PATH=/opt/qt512/" >> /etc/profile

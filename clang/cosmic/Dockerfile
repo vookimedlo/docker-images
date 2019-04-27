@@ -26,4 +26,6 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     pkg-config \
     dh-make \
     bzr-builddeb \
-    git-buildpackage
+    git-buildpackage \
+    moreutils
+

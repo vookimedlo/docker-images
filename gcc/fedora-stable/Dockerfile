@@ -8,3 +8,17 @@ RUN yum -y install \
     make           \
     cmake          \
     git
+
+# RPM related
+#
+RUN yum -y install \
+    rpm-build \
+    rpm-devel \
+    rpmlint \
+    python \
+    bash \
+    coreutils \
+    diffutils \
+    patch \
+    rpmdevtools \
+    desktop-file-utils

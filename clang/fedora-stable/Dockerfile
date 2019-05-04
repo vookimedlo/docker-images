@@ -15,6 +15,7 @@ RUN yum -y install \
     rpm-devel \
     rpmlint \
     python \
+    python-dateutil \
     bash \
     coreutils \
     diffutils \

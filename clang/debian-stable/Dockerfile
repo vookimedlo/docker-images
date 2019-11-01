@@ -7,12 +7,12 @@ RUN echo "deb http://deb.debian.org/debian buster-backports main contrib non-fre
 RUN apt-get update && apt-get -y install software-properties-common
 
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
-    clang-3.8 \
+    clang-7   \
     make      \
     cmake     \
     git
 
-RUN ln -sf /usr/bin/clang++-3.8 /usr/bin/clang++ && ln -sf /usr/bin/clang-3.8 /usr/bin/clang
+RUN ln -sf /usr/bin/clang++-7 /usr/bin/clang++ && ln -sf /usr/bin/clang-7 /usr/bin/clang
 
 RUN echo "export CXX=clang++" >> /etc/profile
 RUN echo "export CC=clang" >> /etc/profile

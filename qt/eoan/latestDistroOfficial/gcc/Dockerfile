@@ -1,4 +1,4 @@
-FROM vookimedlo/ubuntu-gcc:gcc_cosmic
+FROM vookimedlo/ubuntu-gcc:gcc_eoan
 
 RUN apt-get update -qq
 RUN apt-get -y install qt5-default qt5-image-formats-plugins

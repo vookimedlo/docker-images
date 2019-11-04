@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic
+FROM ubuntu:eoan
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
@@ -7,15 +7,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get -y install software-properties-common
 
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
-    clang-7   \
-    make      \
-    cmake     \
+    g++   \
+    gcc   \
+    make  \
+    cmake \
     git
-
-RUN ln -sf /usr/bin/clang++-7 /usr/bin/clang++ && ln -sf /usr/bin/clang-7 /usr/bin/clang
-
-RUN echo "export CXX=clang++" >> /etc/profile
-RUN echo "export CC=clang" >> /etc/profile
 
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
     checkinstall \

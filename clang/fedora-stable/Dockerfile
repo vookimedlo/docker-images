@@ -9,13 +9,14 @@ RUN yum -y install \
     git
 
 # RPM related
+# Starting from the Fedora 31 - python is python3!!!
 #
 RUN yum -y install \
     rpm-build \
     rpm-devel \
     rpmlint \
     python \
-    python-dateutil \
+    python3-dateutil \
     bash \
     coreutils \
     diffutils \

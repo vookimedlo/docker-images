@@ -2,7 +2,7 @@
 
 # Remove all images
 #
-docker system prune -f
+docker system prune -af
 docker rmi $(docker images -a -q)
 
 set -e

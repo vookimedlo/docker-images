@@ -23,7 +23,8 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
 
 RUN ln -sf /usr/bin/clang++-7 /usr/bin/clang++ && ln -sf /usr/bin/clang-7 /usr/bin/clang
 
-RUN echo "export CXX=clang++\nexport CC=clang" >> /etc/profile
+RUN echo "export CXX=clang++" >> /etc/profile
+RUN echo "export CC=clang" >> /etc/profile
 
 
 

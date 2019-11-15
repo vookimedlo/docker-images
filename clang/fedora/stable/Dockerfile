@@ -20,4 +20,5 @@ RUN yum -y update && yum -y install \
     desktop-file-utils
 
 
-RUN echo "export CXX=clang++\nexport CC=clang" >> /etc/profile
+RUN echo "export CXX=clang++" >> /etc/profile
+RUN echo "export CC=clang" >> /etc/profile

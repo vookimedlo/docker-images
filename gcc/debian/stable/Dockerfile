@@ -1,4 +1,6 @@
 FROM debian:stable
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 ENV DEBIAN_FRONTEND=noninteractive
 

@@ -1,4 +1,6 @@
 FROM fedora:latest
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 # Starting from the Fedora 31 - python is python3!!!
 #

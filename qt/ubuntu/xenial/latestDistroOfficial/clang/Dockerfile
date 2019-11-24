@@ -1,4 +1,6 @@
 FROM vookimedlo/ubuntu-clang:clang_xenial
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 RUN apt-get update -qq
 RUN apt-get -y install qt5-default qt5-image-formats-plugins

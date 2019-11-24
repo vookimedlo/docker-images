@@ -1,4 +1,6 @@
 FROM vookimedlo/ubuntu-clang:clang_xenial
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 RUN add-apt-repository -y ppa:beineri/opt-qt-5.10.1-xenial
 RUN apt-get update -qq

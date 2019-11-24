@@ -1,4 +1,6 @@
 FROM vookimedlo/ubuntu-gcc:gcc_xenial
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 RUN add-apt-repository -y ppa:beineri/opt-qt-5.12.3-xenial
 RUN apt-get update -qq

@@ -1,4 +1,6 @@
 FROM ubuntu:xenial
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 RUN apt-get update && apt-get -y install software-properties-common
 

@@ -1,4 +1,6 @@
 FROM vookimedlo/fedora-gcc:gcc_stable
+LABEL maintainer="github@vookimedlo.cz"
+LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 RUN yum install -y qt5 qt5-qtbase-devel
 

@@ -21,7 +21,8 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     dh-make                             \
     bzr-builddeb                        \
     git-buildpackage                    \
-    moreutils
+    moreutils                           \
+&& rm -rf /var/lib/apt/lists/*
 
 RUN ln -sf /usr/bin/clang++-7 /usr/bin/clang++ && ln -sf /usr/bin/clang-7 /usr/bin/clang
 

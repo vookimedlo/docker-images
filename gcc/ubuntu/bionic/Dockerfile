@@ -6,16 +6,13 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get -y install software-properties-common
-
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
+    software-properties-common \
     g++   \
     gcc   \
     make  \
     cmake \
-    git
-
-RUN apt-get update && apt-get -y --allow-unauthenticated install \
+    git   \
     checkinstall \
     build-essential \
     automake \
@@ -25,5 +22,5 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     dh-make \
     bzr-builddeb \
     git-buildpackage \
-    moreutils
-
+    moreutils \
+&& rm -rf /var/lib/apt/lists/*

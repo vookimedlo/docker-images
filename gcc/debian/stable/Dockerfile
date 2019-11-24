@@ -22,5 +22,6 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     dh-make                    \
     bzr-builddeb               \
     git-buildpackage           \
-    moreutils
+    moreutils                  \
+&& rm -rf /var/lib/apt/lists/*
 

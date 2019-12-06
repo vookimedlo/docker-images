@@ -5,9 +5,11 @@
 docker system prune -af
 docker rmi $(docker images -a -q)
 
+start=`date +%s`
+
 set -e
 
-find qt -name "Dockerfile" -print0 | xargs -L 1 -0 gsed -i'.orig' 's/FROM vookimedlo/FROM docker.pkg.github.com\/vookimedlo\/docker-images/'
+find qt -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM vookimedlo/FROM docker.pkg.github.com\/vookimedlo\/docker-images/'
 
 # GCC
 #
@@ -106,3 +108,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_eoan
 
 echo "!!! DONE !!!"
+
+end=`date +%s`
+echo -n "$end - $start = "
+expr $end - $start

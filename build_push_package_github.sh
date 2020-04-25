@@ -18,6 +18,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_bu
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic                       gcc/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_eoan                         gcc/ubuntu/eoan
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_30                           gcc/fedora/30
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_31                           gcc/fedora/31
@@ -29,6 +30,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clan
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic                   clang/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial                   clang/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_eoan                     clang/ubuntu/eoan
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal                    clang/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable                   clang/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_30                       clang/fedora/30
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_31                       clang/fedora/31
@@ -67,6 +69,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_eoan
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_30
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_31
@@ -78,6 +81,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_bu
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_eoan
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_30
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_31

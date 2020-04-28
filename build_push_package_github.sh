@@ -22,6 +22,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_fo
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_30                           gcc/fedora/30
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_31                           gcc/fedora/31
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32                           gcc/fedora/32
 
 # Clang
 #
@@ -34,6 +35,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clan
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable                   clang/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_30                       clang/fedora/30
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_31                       clang/fedora/31
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32                       clang/fedora/32
 
 # Debian - distro Qt
 #
@@ -50,6 +52,8 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_30       qt/fedora/30/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_31     qt/fedora/31/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_31       qt/fedora/31/latestDistroOfficial/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_32     qt/fedora/32/latestDistroOfficial/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32       qt/fedora/32/latestDistroOfficial/gcc
 
 # Ubuntu - distro Qt
 #

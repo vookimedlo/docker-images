@@ -20,6 +20,7 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_30                           gcc/fedora/30
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_31                           gcc/fedora/31
+docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_32                           gcc/fedora/32
 
 # Clang
 #
@@ -32,6 +33,7 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_30                       clang/fedora/30
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_31                       clang/fedora/31
+docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_32                       clang/fedora/32
 
 # Debian - distro Qt
 #
@@ -48,6 +50,8 @@ docker buildx build --push --platform linux/amd64,linux/arm64               -t v
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_30       qt/fedora/30/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_31     qt/fedora/31/latestDistroOfficial/clang
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_31       qt/fedora/31/latestDistroOfficial/gcc
+docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_32     qt/fedora/32/latestDistroOfficial/clang
+docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_32       qt/fedora/32/latestDistroOfficial/gcc
 
 # Ubuntu - distro Qt
 #

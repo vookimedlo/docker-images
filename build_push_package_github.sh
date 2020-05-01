@@ -105,6 +105,8 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_30
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_31
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_31
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_32
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32
 
 # Ubuntu - distro Qt - PUSH
 #

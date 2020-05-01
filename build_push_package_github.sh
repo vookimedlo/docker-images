@@ -77,6 +77,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_30
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_31
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32
 
 # Clang - PUSH
 #
@@ -89,6 +90,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_fo
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_30
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_31
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32
 
 # Debian - distro Qt - PUSH
 #

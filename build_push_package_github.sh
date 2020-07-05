@@ -64,6 +64,14 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_eoan   qt/ubuntu/eoan/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_eoan     qt/ubuntu/eoan/latestDistroOfficial/gcc
 
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_focal  qt/ubuntu/focal/5.14/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_focal    qt/ubuntu/focal/5.14/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_xenial  qt/ubuntu/xenial/5.14/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_xenial    qt/ubuntu/xenial/5.14/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_bionic  qt/ubuntu/bionic/5.14/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_bionic    qt/ubuntu/bionic/5.14/gcc
+
+
 ######################################################3
 
 # GCC - PUSH
@@ -120,6 +128,13 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_eoan
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal
+
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_xenial
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_xenial
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_bionic
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_bionic
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_focal
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_focal
 
 echo "!!! DONE !!!"
 

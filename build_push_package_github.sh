@@ -63,6 +63,8 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_xenial   qt/ubuntu/xenial/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_eoan   qt/ubuntu/eoan/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_eoan     qt/ubuntu/eoan/latestDistroOfficial/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_focal   qt/ubuntu/focal/latestDistroOfficial/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal     qt/ubuntu/focal/latestDistroOfficial/gcc
 
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_clang_focal  qt/ubuntu/focal/5.14/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:5.14_gcc_focal    qt/ubuntu/focal/5.14/gcc

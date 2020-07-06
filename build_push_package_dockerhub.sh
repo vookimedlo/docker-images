@@ -66,12 +66,12 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 
 # There are no ARM Qt binaries available for given version of Qt
 #
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_xenial  qt/ubuntu/xenial/5.14/clang
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_xenial    qt/ubuntu/xenial/5.14/gcc
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_bionic  qt/ubuntu/bionic/5.14/clang
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_bionic    qt/ubuntu/bionic/5.14/gcc
 docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_focal  qt/ubuntu/focal/5.14/clang
 docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_focal    qt/ubuntu/focal/5.14/gcc
-docker buildx build --push --platform linux/amd64  -t vookimedlo/xenial-qt:5.14_clang_xenial  qt/ubuntu/xenial/5.14/clang
-docker buildx build --push --platform linux/amd64  -t vookimedlo/xenial-qt:5.14_gcc_xenial    qt/ubuntu/xenial/5.14/gcc
-docker buildx build --push --platform linux/amd64  -t vookimedlo/bionic-qt:5.14_clang_bionic  qt/ubuntu/bionic/5.14/clang
-docker buildx build --push --platform linux/amd64  -t vookimedlo/bionic-qt:5.14_gcc_bionic    qt/ubuntu/bionic/5.14/gcc
 
 
 echo "!!! DONE !!!"

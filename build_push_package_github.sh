@@ -13,6 +13,7 @@ find qt -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM vookime
 
 # GCC
 #
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_latest                       gcc/alpine/latest
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_stable                       gcc/debian/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster                       gcc/debian/buster
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic                       gcc/ubuntu/bionic
@@ -23,8 +24,10 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_st
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32                           gcc/fedora/32
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33                           gcc/fedora/33
 
+
 # GCC - PUSH
 #
+docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_alpine
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic
@@ -38,6 +41,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33
 
 # Clang
 #
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/alpine-clang:clang_latest                   clang/alpine/latest
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_stable                   clang/debian/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_buster                   clang/debian/buster
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic                   clang/ubuntu/bionic
@@ -50,6 +54,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clan
 
 # Clang - PUSH
 #
+docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-clang:clang_latest
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_buster
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic
@@ -64,6 +69,14 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_33
 #
 docker system prune -af || true
 docker rmi $(docker images -a -q) || true
+
+# Alpine - distro Qt - just gcc. Clang seems to be broken
+#
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/alpine-qt:latestDistroOfficial_gcc_latest   qt/alpine/latest/latestDistroOfficial/gcc
+
+# Alpine - distro Qt - PUSH
+#
+docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-qt:latestDistroOfficial_gcc_latest
 
 # Debian - distro Qt
 #

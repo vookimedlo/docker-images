@@ -1,4 +1,5 @@
-
 .DS_Store
 *.sh#
-.#build_push_package_dockerhub.sh
+.#*
+*#
+#*

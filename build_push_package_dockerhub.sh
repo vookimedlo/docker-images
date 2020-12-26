@@ -15,7 +15,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/debian-gcc:gcc_buster                       gcc/debian/buster
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_bionic                       gcc/ubuntu/bionic
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
-docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_eoan                         gcc/ubuntu/eoan
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_groovy                       gcc/ubuntu/groovy
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
@@ -30,7 +29,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/debian-clang:clang_buster                   clang/debian/buster
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_bionic                   clang/ubuntu/bionic
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_xenial                   clang/ubuntu/xenial
-docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_eoan                     clang/ubuntu/eoan
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_focal                    clang/ubuntu/focal
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_groovy                   clang/ubuntu/groovy
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
@@ -65,8 +63,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_gcc_bionic   qt/ubuntu/bionic/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_clang_xenial qt/ubuntu/xenial/latestDistroOfficial/clang
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_gcc_xenial   qt/ubuntu/xenial/latestDistroOfficial/gcc
-docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_clang_eoan   qt/ubuntu/eoan/latestDistroOfficial/clang
-docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_gcc_eoan     qt/ubuntu/eoan/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_clang_focal  qt/ubuntu/focal/latestDistroOfficial/clang
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_gcc_focal    qt/ubuntu/focal/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-qt:latestDistroOfficial_clang_groovy  qt/ubuntu/groovy/latestDistroOfficial/clang

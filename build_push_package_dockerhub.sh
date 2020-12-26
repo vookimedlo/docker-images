@@ -78,9 +78,10 @@ docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_
 docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_xenial    qt/ubuntu/xenial/5.14/gcc
 docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_bionic  qt/ubuntu/bionic/5.14/clang
 docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_bionic    qt/ubuntu/bionic/5.14/gcc
-docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_focal  qt/ubuntu/focal/5.14/clang
-docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_focal    qt/ubuntu/focal/5.14/gcc
-
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_clang_focal   qt/ubuntu/focal/5.14/clang
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.14_gcc_focal     qt/ubuntu/focal/5.14/gcc
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.15_clang_focal   qt/ubuntu/focal/5.15/clang
+docker buildx build --push --platform linux/amd64  -t vookimedlo/ubuntu-qt:5.15_gcc_focal     qt/ubuntu/focal/5.15/gcc
 
 echo "!!! DONE !!!"
 

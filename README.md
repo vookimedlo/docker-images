@@ -1,6 +1,10 @@
 # docker-images
 
 ![Docker Image CI](https://github.com/vookimedlo/docker-images/workflows/Docker%20Image%20CI/badge.svg)
+![Alpine](https://img.shields.io/badge/Alpine-blueviolet?&logo=alpine-linux)
+![Debian](https://img.shields.io/badge/Debian-blueviolet?&logo=debian)
+![Fedora](https://img.shields.io/badge/Fedora-blueviolet?&logo=fedora)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-blueviolet?&logo=ubuntu)
 
 Docker images for a continuous integration. CI services usually support the pre-defined GNU/Linux OS as a target platform. Docker images can bypass such restrictions.
 
@@ -8,7 +12,7 @@ The main purpose of these docker images is to provide the developer-ready platfo
 
 CI services:
 - Travis-CI ([see example][3])
-- Github Actions (see example)
+- Github Actions
 
 Images are hosted at:
  - [GitHub Packages][2]

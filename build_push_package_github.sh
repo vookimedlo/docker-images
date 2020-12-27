@@ -27,7 +27,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33
 
 # GCC - PUSH
 #
-docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_alpine
+docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_latest
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic

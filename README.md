@@ -15,8 +15,9 @@ CI services:
 - Github Actions
 
 Images are hosted at:
- - [GitHub Packages][2]
- - [Docker Hub][1]
+ - [Docker Hub][1] - built for multiple architectures
+ - [GitHub Packages][2] - built for AMD64 architecture only
+
  
  
  

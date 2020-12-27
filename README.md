@@ -1,10 +1,10 @@
 # docker-images
 
 ![Docker Image CI](https://github.com/vookimedlo/docker-images/workflows/Docker%20Image%20CI/badge.svg)
-![Alpine](https://img.shields.io/badge/Alpine-blueviolet?&logo=alpine-linux)
-![Debian](https://img.shields.io/badge/Debian-blueviolet?&logo=debian)
-![Fedora](https://img.shields.io/badge/Fedora-blueviolet?&logo=fedora)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-blueviolet?&logo=ubuntu)
+[![Alpine](https://img.shields.io/badge/Alpine-blueviolet?&logo=alpine-linux)](/qt/alpine)
+[![Debian](https://img.shields.io/badge/Debian-blueviolet?&logo=debian)](/qt/debian)
+[![Fedora](https://img.shields.io/badge/Fedora-blueviolet?&logo=fedora)](/qt/fedora)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-blueviolet?&logo=ubuntu)](/qt/ubuntu)
 
 Docker images for a continuous integration. CI services usually support the pre-defined GNU/Linux OS as a target platform. Docker images can bypass such restrictions.
 

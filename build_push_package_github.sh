@@ -20,9 +20,11 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bi
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_groovy                       gcc/ubuntu/groovy
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32                           gcc/fedora/32
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33                           gcc/fedora/33
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34                           gcc/fedora/34
 
 
 # GCC - PUSH
@@ -34,9 +36,11 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_groovy
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34
 
 
 # Clang
@@ -48,9 +52,11 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clan
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial                   clang/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal                    clang/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_groovy                   clang/ubuntu/groovy
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute                  clang/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable                   clang/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32                       clang/fedora/32
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_33                       clang/fedora/33
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_34                       clang/fedora/34
 
 # Clang - PUSH
 #
@@ -61,9 +67,11 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bi
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_groovy
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_33
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_34
 
 # Remove all images
 #
@@ -105,6 +113,8 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32       qt/fedora/32/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_33     qt/fedora/33/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_33       qt/fedora/33/latestDistroOfficial/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_34     qt/fedora/34/latestDistroOfficial/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_34       qt/fedora/34/latestDistroOfficial/gcc
 
 # Fedora - distro Qt - PUSH
 #
@@ -114,6 +124,8 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_33
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_33
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_34
+docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_34
 
 # Remove all images
 #
@@ -130,6 +142,8 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal     qt/ubuntu/focal/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_groovy   qt/ubuntu/groovy/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_groovy     qt/ubuntu/groovy/latestDistroOfficial/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_hirsute   qt/ubuntu/hirsute/latestDistroOfficial/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_hirsute     qt/ubuntu/hirsute/latestDistroOfficial/gcc
 
 # Ubuntu - distro Qt - PUSH
 #
@@ -141,6 +155,8 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_groovy
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_groovy
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_hirsute
+docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_hirsute
 
 # Remove all images
 #

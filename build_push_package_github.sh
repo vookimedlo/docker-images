@@ -16,6 +16,7 @@ find qt -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM vookime
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_latest                       gcc/alpine/latest
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_stable                       gcc/debian/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster                       gcc/debian/buster
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_bullseye                     gcc/debian/bullseye
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic                       gcc/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
@@ -32,6 +33,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34
 docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-gcc:gcc_latest
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_buster
+docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_bullseye
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
@@ -48,6 +50,7 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/alpine-clang:clang_latest                   clang/alpine/latest
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_stable                   clang/debian/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_buster                   clang/debian/buster
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_bullseye                 clang/debian/bullseye
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic                   clang/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial                   clang/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal                    clang/ubuntu/focal
@@ -63,6 +66,7 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clan
 docker push docker.pkg.github.com/vookimedlo/docker-images/alpine-clang:clang_latest
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_buster
+docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_bullseye
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal
@@ -92,6 +96,9 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_stable   qt/debian/stable/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_clang_buster qt/debian/buster/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_buster   qt/debian/buster/latestDistroOfficial/gcc
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_clang_bullseye qt/debian/bullseye/latestDistroOfficial/clang
+docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_bullseye   qt/debian/bullseye/latestDistroOfficial/gcc
+
 
 # Debian - distro Qt - PUSH
 #
@@ -99,6 +106,9 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_clang_buster
 docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_buster
+docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_clang_bullseye
+docker push docker.pkg.github.com/vookimedlo/docker-images/debian-qt:latestDistroOfficial_gcc_bullseye
+
 
 # Remove all images
 #

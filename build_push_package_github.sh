@@ -22,7 +22,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xe
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable                       gcc/fedora/stable
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32                           gcc/fedora/32
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33                           gcc/fedora/33
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34                           gcc/fedora/34
 
@@ -38,7 +37,6 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable
-docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_33
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_34
 
@@ -54,7 +52,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clan
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal                    clang/ubuntu/focal
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute                  clang/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable                   clang/fedora/stable
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32                       clang/fedora/32
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_33                       clang/fedora/33
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_34                       clang/fedora/34
 
@@ -69,7 +66,6 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xe
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable
-docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_33
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_34
 
@@ -115,8 +111,6 @@ docker rmi $(docker images -a -q) || true
 #
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_stable qt/fedora/stable/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_stable   qt/fedora/stable/latestDistroOfficial/gcc
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_32     qt/fedora/32/latestDistroOfficial/clang
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32       qt/fedora/32/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_33     qt/fedora/33/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_33       qt/fedora/33/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_34     qt/fedora/34/latestDistroOfficial/clang
@@ -126,8 +120,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestD
 #
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_stable
-docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_32
-docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_32
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_33
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_gcc_33
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-qt:latestDistroOfficial_clang_34

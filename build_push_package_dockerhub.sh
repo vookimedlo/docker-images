@@ -19,7 +19,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/hirsute
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
-docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_32                           gcc/fedora/32
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_33                           gcc/fedora/33
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_34                           gcc/fedora/34
 docker buildx build --push --platform linux/amd64                           -t vookimedlo/alpine-gcc:gcc_latest                       gcc/alpine/latest
@@ -34,7 +33,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_focal                    clang/ubuntu/focal
 docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-clang:clang_hirsute                  clang/ubuntu/hirsute
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
-docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_32                       clang/fedora/32
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_33                       clang/fedora/33
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-clang:clang_34                       clang/fedora/34
 docker buildx build --push --platform linux/amd64                           -t vookimedlo/alpine-clang:clang_latest                   clang/alpine/latest
@@ -58,8 +56,6 @@ docker buildx build --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t v
 #
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_stable qt/fedora/stable/latestDistroOfficial/clang
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_stable   qt/fedora/stable/latestDistroOfficial/gcc
-docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_32     qt/fedora/32/latestDistroOfficial/clang
-docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_32       qt/fedora/32/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_33     qt/fedora/33/latestDistroOfficial/clang
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_gcc_33       qt/fedora/33/latestDistroOfficial/gcc
 docker buildx build --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-qt:latestDistroOfficial_clang_34     qt/fedora/34/latestDistroOfficial/clang

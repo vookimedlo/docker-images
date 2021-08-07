@@ -20,7 +20,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_bu
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic                       gcc/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_groovy                       gcc/ubuntu/groovy
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32                           gcc/fedora/32
@@ -37,7 +36,6 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/debian-gcc:gcc_bullse
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_focal
-docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_groovy
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-gcc:gcc_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-gcc:gcc_32
@@ -54,7 +52,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clan
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic                   clang/ubuntu/bionic
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial                   clang/ubuntu/xenial
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal                    clang/ubuntu/focal
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_groovy                   clang/ubuntu/groovy
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute                  clang/ubuntu/hirsute
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable                   clang/fedora/stable
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32                       clang/fedora/32
@@ -70,7 +67,6 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/debian-clang:clang_bu
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_bionic
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_focal
-docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_groovy
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-clang:clang_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_stable
 docker push docker.pkg.github.com/vookimedlo/docker-images/fedora-clang:clang_32
@@ -150,8 +146,6 @@ docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestD
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_xenial   qt/ubuntu/xenial/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_focal   qt/ubuntu/focal/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal     qt/ubuntu/focal/latestDistroOfficial/gcc
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_groovy   qt/ubuntu/groovy/latestDistroOfficial/clang
-docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_groovy     qt/ubuntu/groovy/latestDistroOfficial/gcc
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_hirsute   qt/ubuntu/hirsute/latestDistroOfficial/clang
 docker build -t docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_hirsute     qt/ubuntu/hirsute/latestDistroOfficial/gcc
 
@@ -163,8 +157,6 @@ docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistr
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_xenial
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_focal
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_focal
-docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_groovy
-docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_groovy
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_clang_hirsute
 docker push docker.pkg.github.com/vookimedlo/docker-images/ubuntu-qt:latestDistroOfficial_gcc_hirsute
 

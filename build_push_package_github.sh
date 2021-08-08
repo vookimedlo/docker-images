@@ -2,12 +2,16 @@
 
 # Remove all images
 #
-docker system prune -af
-docker rmi $(docker images -a -q)
+docker system prune -af || true
+docker rmi $(docker images -a -q) || true
 
 start=`date +%s`
 
 set -e
+
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
+
 
 # GCC
 #

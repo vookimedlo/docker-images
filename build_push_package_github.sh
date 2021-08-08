@@ -11,6 +11,7 @@ set -e
 
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
+docker buildx use super_truper
 
 
 # GCC

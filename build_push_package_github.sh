@@ -9,6 +9,8 @@ start=`date +%s`
 
 set -e
 
+find qt -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM vookimedlo/FROM ghcr.io\/vookimedlo\/docker-images/'
+
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
 docker buildx use super_truper

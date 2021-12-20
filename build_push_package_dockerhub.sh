@@ -18,7 +18,7 @@ docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_xenial                       gcc/ubuntu/xenial
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_focal                        gcc/ubuntu/focal
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/hirsute
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_hirsute                      gcc/ubuntu/impish
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,linux/arm64  -t vookimedlo/ubuntu-gcc:gcc_impish                       gcc/ubuntu/impish
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_34                           gcc/fedora/34
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64               -t vookimedlo/fedora-gcc:gcc_35                           gcc/fedora/35

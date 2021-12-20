@@ -4,9 +4,8 @@ LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-RUN apt-get update && apt-get -y --allow-unauthenticated install \
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+&&  apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \
     clang-10   \
     make      \
@@ -22,9 +21,7 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     bzr-builddeb \
     git-buildpackage \
     moreutils \
-&& rm -rf /var/lib/apt/lists/*
-
-RUN ln -sf /usr/bin/clang++-10 /usr/bin/clang++ && ln -sf /usr/bin/clang-10 /usr/bin/clang
-
-RUN echo "export CXX=clang++" >> /etc/profile
-RUN echo "export CC=clang" >> /etc/profile
+&& rm -rf /var/lib/apt/lists/* \
+&& ln -sf /usr/bin/clang++-10 /usr/bin/clang++ && ln -sf /usr/bin/clang-10 /usr/bin/clang \
+&& echo "export CXX=clang++" >> /etc/profile \
+&& echo "export CC=clang" >> /etc/profile

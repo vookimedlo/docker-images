@@ -19,8 +19,6 @@ RUN yum -y update && yum -y install \
     diffutils          \
     patch              \
     rpmdevtools        \
-    desktop-file-utils
-
-
-RUN echo "export CXX=clang++" >> /etc/profile
-RUN echo "export CC=clang" >> /etc/profile
+    desktop-file-utils \
+&& echo "export CXX=clang++" >> /etc/profile \
+&& echo "export CC=clang" >> /etc/profile

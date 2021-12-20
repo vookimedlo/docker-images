@@ -4,7 +4,7 @@ LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN echo "deb http://deb.debian.org/debian buster-backports main contrib non-free" >>/etc/apt/sources.list
+RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >>/etc/apt/sources.list
 
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \

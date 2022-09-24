@@ -1,4 +1,4 @@
-FROM vookimedlo/fedora-gcc:gcc_stable
+FROM vookimedlo/fedora-gcc:gcc_36
 LABEL maintainer="github@vookimedlo.cz"
 LABEL homepage="https://github.com/vookimedlo/docker-images"
 

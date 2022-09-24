@@ -2,5 +2,5 @@ FROM vookimedlo/alpine-gcc:gcc_latest
 LABEL maintainer="github@vookimedlo.cz"
 LABEL homepage="https://github.com/vookimedlo/docker-images"
 
-RUN apk add --no-cache qt5-qtbase qt5-qtdeclarative qt5-qtxmlpatterns qt5-qtwebengine \
-		      qt5-qtbase-dev qt5-qtdeclarative-dev qt5-qtxmlpatterns-dev qt5-qtwebengine-dev
+RUN apk add --no-cache qt6-qtbase qt6-qtdeclarative qt6-qtxmlpatterns qt6-qtwebengine \
+		      qt6-qtbase-dev qt6-qtdeclarative-dev qt6-qtxmlpatterns-dev qt6-qtwebengine-dev

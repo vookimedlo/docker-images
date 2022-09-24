@@ -1,4 +1,4 @@
-FROM vookimedlo/debian-gcc:gcc_bullseye
+FROM vookimedlo/debian-gcc:gcc_bookworm
 LABEL maintainer="github@vookimedlo.cz"
 LABEL homepage="https://github.com/vookimedlo/docker-images"
 

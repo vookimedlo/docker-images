@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:stable-slim
 LABEL maintainer="github@vookimedlo.cz"
 LABEL homepage="https://github.com/vookimedlo/docker-images"
 

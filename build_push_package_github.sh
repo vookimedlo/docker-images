@@ -15,6 +15,8 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
 docker buildx use super_truper
 
+if [[ -z "$1" ]] || [[ "$1" -eq "compilers" ]]
+then
 
 # GCC
 #
@@ -31,6 +33,11 @@ docker buildx build --progress plain --push --platform linux/amd64              
 #
 docker system prune -af || true
 docker rmi $(docker images -a -q) || true
+
+fi
+
+if [[ -z "$1" ]] || [[ "$1" -eq "qt" ]]
+then
 
 
 # Clang
@@ -94,6 +101,8 @@ docker buildx build --progress plain --push --platform linux/amd64,linux/arm/v7,
 #
 docker system prune -af || true
 docker rmi $(docker images -a -q) || true
+
+fi
 
 echo "!!! DONE !!!"
 

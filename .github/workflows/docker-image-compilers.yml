@@ -1,0 +1,15 @@
+name: Docker Image [Compilers] CI
+
+on:
+  workflow_dispatch
+
+jobs:
+  build-compilers:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Github Repo
+      run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Build the Docker image
+      run: sh build_push_package_github.sh compilers

@@ -4,12 +4,22 @@ on:
   workflow_dispatch
 
 jobs:
-  build:
+  build-compilers:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Login to Github Repo
       run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-    - name: Build the Docker image
-      run: sh build_push_package_github.sh
+    - name: Build the Docker image [Compilers]
+      run: sh build_push_package_github.sh compilers
+
+  build-qt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Github Repo
+      run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Build the Docker image [Qt]
+      run: sh build_push_package_github.sh qt

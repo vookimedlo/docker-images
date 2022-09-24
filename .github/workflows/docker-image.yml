@@ -15,6 +15,7 @@ jobs:
       run: sh build_push_package_github.sh compilers
 
   build-qt:
+    needs: build-compilers
     runs-on: ubuntu-latest
 
     steps:

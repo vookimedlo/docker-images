@@ -1,5 +1,7 @@
 # docker-images
 
+This branch hosts the Qt5 support - no longer maintained. Use the master for Qt6.
+
 ![Docker Image CI](https://github.com/vookimedlo/docker-images/workflows/Docker%20Image%20CI/badge.svg)
 [![Alpine](https://img.shields.io/badge/Alpine-blueviolet?&logo=alpine-linux)](/qt/alpine)
 [![Debian](https://img.shields.io/badge/Debian-blueviolet?&logo=debian)](/qt/debian)

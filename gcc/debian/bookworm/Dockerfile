@@ -4,10 +4,7 @@ LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Uncomment once bookworm is stable
-#
-#RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >>/etc/apt/sources.list \
-&&  apt-get update && apt-get -y --allow-unauthenticated install \
+RUN apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \
     g++                        \
     gcc                        \

@@ -1,6 +1,6 @@
 # docker-images
 
-![Docker Image CI](https://github.com/vookimedlo/docker-images/workflows/Docker%20Image%20CI/badge.svg)
+[![Docker Image CI](https://github.com/vookimedlo/docker-images/actions/workflows/docker-image-qt.yml/badge.svg)](https://github.com/vookimedlo/docker-images/actions/workflows/docker-image-qt.yml)
 [![Alpine](https://img.shields.io/badge/Alpine-blueviolet?&logo=alpine-linux)](/qt/alpine)
 [![Debian](https://img.shields.io/badge/Debian-blueviolet?&logo=debian)](/qt/debian)
 [![Fedora](https://img.shields.io/badge/Fedora-blueviolet?&logo=fedora)](/qt/fedora)

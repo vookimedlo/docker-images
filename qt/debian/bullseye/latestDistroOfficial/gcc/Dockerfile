@@ -2,7 +2,7 @@ FROM vookimedlo/debian-gcc:gcc_bullseye
 LABEL maintainer="github@vookimedlo.cz"
 LABEL homepage="https://github.com/vookimedlo/docker-images"
 
-RUN apt-get update -qq && apt-get -y install qtbase6-dev qt6-qmake qtbase6-dev-tools qt6-image-formats-plugins \
+RUN apt-get update -qq && apt-get -y install qt6-base-dev qt6-base-dev-tools qt6-base-private-dev qmake6 qt6-image-formats-plugins libopengl-dev \
 && rm -rf /var/lib/apt/lists/* \
 &&  if [ "$TARGETARCH" = "amd64" ]; \
     then echo "export QMAKESPEC=/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-clang" >> /etc/profile; \

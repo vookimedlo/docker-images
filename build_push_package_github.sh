@@ -92,8 +92,8 @@ docker rmi $(docker images -a -q) || true
 #
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_jammy    qt/ubuntu/jammy/latestDistroOfficial/clang
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_jammy      qt/ubuntu/jammy/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_bookworm qt/ubuntu/bookworm/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_bookworm   qt/ubuntu/bookworm/latestDistroOfficial/gcc
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_kinetic  qt/ubuntu/kinetic/latestDistroOfficial/clang
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_kinetic    qt/ubuntu/kinetic/latestDistroOfficial/gcc
 
 # Remove all images
 #

@@ -8,17 +8,15 @@
 
 Docker images for a continuous integration. CI services usually support the pre-defined GNU/Linux OS as a target platform. Docker images can bypass such restrictions.
 
-The main purpose of these docker images is to provide the developer-ready platforms with the various [Qt][4] versions inside.
+The main purpose of these docker images is to provide the developer-ready platforms with the various [Qt 6.x][4] versions inside.
 
 CI services:
 - Travis-CI ([see example][3])
 - Github Actions
 
-Images are hosted at:
- - [Docker Hub][1] - built for multiple architectures
- - [GitHub Packages][2] - built for AMD64 architecture only
-
- 
+Images for multiple architectures are hosted at:
+ - [Docker Hub][1]
+ - [GitHub Packages][2]
  
  
  [1]: https://hub.docker.com/u/vookimedlo/

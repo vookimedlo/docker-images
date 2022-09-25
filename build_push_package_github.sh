@@ -34,12 +34,6 @@ docker buildx build --progress plain --push --platform linux/amd64              
 docker system prune -af || true
 docker rmi $(docker images -a -q) || true
 
-fi
-
-if [ -z "$1" ] || [ "$1" = "qt" ]
-then
-
-
 # Clang
 #
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_stable                   clang/debian/stable
@@ -56,6 +50,10 @@ docker buildx build --progress plain --push --platform linux/amd64              
 docker system prune -af || true
 docker rmi $(docker images -a -q) || true
 
+fi
+
+if [ -z "$1" ] || [ "$1" = "qt" ]
+then
 
 # Alpine - distro Qt - just gcc. Clang seems to be broken
 #

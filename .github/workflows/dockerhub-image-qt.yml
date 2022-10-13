@@ -1,0 +1,15 @@
+name: DockerHub Image [Qt] CI
+
+on:
+  workflow_dispatch
+
+jobs:
+  build-qt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Github Repo
+      run: docker login -u ${{ github.actor }} -p ${{ secrets.DOCKER_TOKEN }}
+    - name: Build the Docker image [Qt]
+      run: sh build_push_package_dockerhub.sh qt

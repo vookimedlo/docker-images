@@ -11,8 +11,7 @@ Docker images for a continuous integration. CI services usually support the pre-
 The main purpose of these docker images is to provide the developer-ready platforms with the various [Qt 6.x][4] versions inside.
 
 CI services:
-- Travis-CI ([see example][3])
-- Github Actions
+- Github Actions ([see example][3])
 
 Images for multiple architectures are hosted at:
  - [Docker Hub][1]
@@ -21,10 +20,5 @@ Images for multiple architectures are hosted at:
  
  [1]: https://hub.docker.com/u/vookimedlo/
  [2]: https://github.com/vookimedlo?tab=packages&repo_name=docker-images
- [3]: https://travis-ci.org/github/vookimedlo/vooki-image-viewer
+ [3]: https://github.com/vookimedlo/vooki-image-viewer/actions
  [4]: https://www.qt.io/
- 
- 
- 
- 
- 

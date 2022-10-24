@@ -4,7 +4,7 @@ LABEL homepage="https://github.com/vookimedlo/docker-images"
 
 # Starting from the Fedora 31 - python is python3!!!
 #
-RUN yum -y update && yum -y install \
+RUN dnf -y update && dnf -y install \
     gcc               \
     gcc-c++           \
     make              \

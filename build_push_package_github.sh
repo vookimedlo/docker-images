@@ -11,24 +11,30 @@ set -e
 
 find qt -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM vookimedlo/FROM ghcr.io\/vookimedlo/'
 
-docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
-docker buildx use super_truper
+#docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+#docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
+#docker buildx use super_truper
+
+#docker run --rm --privileged tonistiigi/binfmt:latest --install arm64
+#docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --name super_truper
+#docker buildx use super_truper
+
 
 if [ -z "$1" ] || [ "$1" = "compilers" ]
 then
 
 # GCC
 #
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_36                           gcc/fedora/36
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_37                           gcc/fedora/37
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_stable                       gcc/debian/stable
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bullseye                     gcc/debian/bullseye
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bookworm                     gcc/debian/bookworm
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_jammy                        gcc/ubuntu/jammy
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_kinetic                      gcc/ubuntu/kinetic
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_36                           gcc/fedora/36
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_37                           gcc/fedora/37
 docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-gcc:gcc_latest                       gcc/alpine/latest
+
 
 # Remove all images
 #
@@ -37,15 +43,16 @@ docker rmi $(docker images -a -q) || true
 
 # Clang
 #
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_36                       clang/fedora/36
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_37                       clang/fedora/37
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_stable                   clang/debian/stable
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bullseye                 clang/debian/bullseye
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bookworm                 clang/debian/bookworm
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_jammy                    clang/ubuntu/jammy
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_kinetic                  clang/ubuntu/kinetic
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_36                       clang/fedora/36
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_37                       clang/fedora/37
 docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-clang:clang_latest                   clang/alpine/latest
+
 
 # Remove all images
 #

@@ -33,6 +33,7 @@ docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bookworm                     gcc/debian/bookworm
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_jammy                        gcc/ubuntu/jammy
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_kinetic                      gcc/ubuntu/kinetic
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_lunar                        gcc/ubuntu/lunar
 docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-gcc:gcc_latest                       gcc/alpine/latest
 
 
@@ -51,6 +52,7 @@ docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bookworm                 clang/debian/bookworm
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_jammy                    clang/ubuntu/jammy
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_kinetic                  clang/ubuntu/kinetic
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_lunar                    clang/ubuntu/lunar
 docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-clang:clang_latest                   clang/alpine/latest
 
 
@@ -105,6 +107,8 @@ docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_jammy      qt/ubuntu/jammy/latestDistroOfficial/gcc
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_kinetic  qt/ubuntu/kinetic/latestDistroOfficial/clang
 docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_kinetic    qt/ubuntu/kinetic/latestDistroOfficial/gcc
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_lunar    qt/ubuntu/lunar/latestDistroOfficial/clang
+docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_lunar      qt/ubuntu/lunar/latestDistroOfficial/gcc
 
 # Remove all images
 #

@@ -22,5 +22,7 @@ RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-f
     bzr-builddeb               \
     git-buildpackage           \
     moreutils                  \
+    libraw-bin \
+    libraw-dev \
 && rm -rf /var/lib/apt/lists/*
 

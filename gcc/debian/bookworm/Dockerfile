@@ -21,4 +21,6 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     bzr-builddeb               \
     git-buildpackage           \
     moreutils                  \
+    libraw-bin \
+    libraw-dev \
 && rm -rf /var/lib/apt/lists/*

@@ -20,6 +20,8 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     bzr-builddeb                        \
     git-buildpackage                    \
     moreutils                           \
+    libraw-bin \
+    libraw-dev \
 && rm -rf /var/lib/apt/lists/*          \
 && ln -sf /usr/bin/clang++-14 /usr/bin/clang++ && ln -sf /usr/bin/clang-14 /usr/bin/clang \
 && echo "export CXX=clang++" >> /etc/profile \

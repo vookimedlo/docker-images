@@ -22,4 +22,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     bzr-builddeb \
     git-buildpackage \
     moreutils \
+    libraw-bin \
+    libraw-dev \
 && rm -rf /var/lib/apt/lists/*

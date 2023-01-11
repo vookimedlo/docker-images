@@ -20,4 +20,7 @@ RUN dnf -y update && dnf -y install \
     diffutils         \
     patch             \
     rpmdevtools       \
-    desktop-file-utils
+    desktop-file-utils \
+    LibRaw             \
+    LibRaw-devel
+

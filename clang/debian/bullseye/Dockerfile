@@ -21,6 +21,8 @@ RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-f
     bzr-builddeb                        \
     git-buildpackage                    \
     moreutils                           \
+    libraw-bin \
+    libraw-dev \
 && rm -rf /var/lib/apt/lists/*          \
 && ln -sf /usr/bin/clang++-11 /usr/bin/clang++ && ln -sf /usr/bin/clang-11 /usr/bin/clang \
 && echo "export CXX=clang++" >> /etc/profile \

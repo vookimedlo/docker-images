@@ -20,5 +20,7 @@ RUN dnf -y update && dnf -y install \
     patch              \
     rpmdevtools        \
     desktop-file-utils \
+    LibRaw             \
+    LibRaw-devel       \
 && echo "export CXX=clang++" >> /etc/profile \
 && echo "export CC=clang" >> /etc/profile

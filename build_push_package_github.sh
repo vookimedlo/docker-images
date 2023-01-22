@@ -25,16 +25,16 @@ then
 
 # GCC
 #
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_36                           gcc/fedora/36
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_37                           gcc/fedora/37
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_stable                       gcc/debian/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bullseye                     gcc/debian/bullseye
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bookworm                     gcc/debian/bookworm
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_jammy                        gcc/ubuntu/jammy
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_kinetic                      gcc/ubuntu/kinetic
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_lunar                        gcc/ubuntu/lunar
-docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-gcc:gcc_latest                       gcc/alpine/latest
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_stable                       gcc/fedora/stable
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_36                           gcc/fedora/36
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-gcc:gcc_37                           gcc/fedora/37
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_stable                       gcc/debian/stable
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bullseye                     gcc/debian/bullseye
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-gcc:gcc_bookworm                     gcc/debian/bookworm
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_jammy                        gcc/ubuntu/jammy
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_kinetic                      gcc/ubuntu/kinetic
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-gcc:gcc_lunar                        gcc/ubuntu/lunar
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-gcc:gcc_latest                       gcc/alpine/latest
 
 
 # Remove all images
@@ -44,16 +44,16 @@ docker rmi $(docker images -a -q) || true
 
 # Clang
 #
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_36                       clang/fedora/36
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_37                       clang/fedora/37
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_stable                   clang/debian/stable
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bullseye                 clang/debian/bullseye
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bookworm                 clang/debian/bookworm
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_jammy                    clang/ubuntu/jammy
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_kinetic                  clang/ubuntu/kinetic
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_lunar                    clang/ubuntu/lunar
-docker buildx build --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-clang:clang_latest                   clang/alpine/latest
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_stable                   clang/fedora/stable
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_36                       clang/fedora/36
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-clang:clang_37                       clang/fedora/37
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_stable                   clang/debian/stable
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bullseye                 clang/debian/bullseye
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-clang:clang_bookworm                 clang/debian/bookworm
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_jammy                    clang/ubuntu/jammy
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_kinetic                  clang/ubuntu/kinetic
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-clang:clang_lunar                    clang/ubuntu/lunar
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64              -t ghcr.io/vookimedlo/alpine-clang:clang_latest                   clang/alpine/latest
 
 
 # Remove all images
@@ -73,12 +73,12 @@ docker buildx build --progress plain --push --platform linux/amd64              
 
 # Debian - distro Qt
 #
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_stable   qt/debian/stable/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_stable     qt/debian/stable/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_bullseye qt/debian/bullseye/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_bullseye   qt/debian/bullseye/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_bookworm qt/debian/bookworm/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_bookworm   qt/debian/bookworm/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_stable   qt/debian/stable/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_stable     qt/debian/stable/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_bullseye qt/debian/bullseye/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_bullseye   qt/debian/bullseye/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_clang_bookworm qt/debian/bookworm/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/debian-qt:qt6_latestDistroOfficial_gcc_bookworm   qt/debian/bookworm/latestDistroOfficial/gcc
 
 # Remove all images
 #
@@ -88,12 +88,12 @@ docker rmi $(docker images -a -q) || true
 
 # Fedora - distro Qt
 #
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_stable   qt/fedora/stable/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_stable     qt/fedora/stable/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_36       qt/fedora/36/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_36         qt/fedora/36/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_37       qt/fedora/37/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_37         qt/fedora/37/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_stable   qt/fedora/stable/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_stable     qt/fedora/stable/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_36       qt/fedora/36/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_36         qt/fedora/36/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_clang_37       qt/fedora/37/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/fedora-qt:qt6_latestDistroOfficial_gcc_37         qt/fedora/37/latestDistroOfficial/gcc
 
 # Remove all images
 #
@@ -103,12 +103,12 @@ docker rmi $(docker images -a -q) || true
 
 # Ubuntu - distro Qt
 #
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_jammy    qt/ubuntu/jammy/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_jammy      qt/ubuntu/jammy/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_kinetic  qt/ubuntu/kinetic/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_kinetic    qt/ubuntu/kinetic/latestDistroOfficial/gcc
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_lunar    qt/ubuntu/lunar/latestDistroOfficial/clang
-docker buildx build --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_lunar      qt/ubuntu/lunar/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_jammy    qt/ubuntu/jammy/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_jammy      qt/ubuntu/jammy/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_kinetic  qt/ubuntu/kinetic/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_kinetic    qt/ubuntu/kinetic/latestDistroOfficial/gcc
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_clang_lunar    qt/ubuntu/lunar/latestDistroOfficial/clang
+docker buildx build --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") --progress plain --push --platform linux/amd64,linux/arm64  -t ghcr.io/vookimedlo/ubuntu-qt:qt6_latestDistroOfficial_gcc_lunar      qt/ubuntu/lunar/latestDistroOfficial/gcc
 
 # Remove all images
 #

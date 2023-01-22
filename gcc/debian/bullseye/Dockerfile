@@ -1,6 +1,16 @@
 FROM debian:bullseye-slim
-LABEL maintainer="github@vookimedlo.cz"
-LABEL homepage="https://github.com/vookimedlo/docker-images"
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
+      org.opencontainers.image.vendor="Michal Duda" \
+      org.opencontainers.image.title="Debian Bullseye GCC Image" \
+      org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw and exiv2."
+
+ARG GIT_COMMIT
+LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
+
+ARG BUILD_DATE
+LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -24,4 +34,5 @@ RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-f
     moreutils                  \
     libraw-bin \
     libraw-dev \
+    libexiv2-dev \
 && rm -rf /var/lib/apt/lists/*

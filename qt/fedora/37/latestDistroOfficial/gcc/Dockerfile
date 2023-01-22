@@ -1,6 +1,16 @@
 FROM vookimedlo/fedora-gcc:gcc_37
-LABEL maintainer="github@vookimedlo.cz"
-LABEL homepage="https://github.com/vookimedlo/docker-images"
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
+      org.opencontainers.image.vendor="Michal Duda" \
+      org.opencontainers.image.title="Fedora 37 GCC based Qt development image" \
+      org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw, exiv2 and the disto-Qt development stuff."
+
+ARG GIT_COMMIT
+LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
+
+ARG BUILD_DATE
+LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 RUN dnf install -y qt6-qtbase qt6-qtimageformats qt6-qtbase-devel qt6-linguist qt6-qttools-devel
 

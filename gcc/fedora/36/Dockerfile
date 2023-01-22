@@ -1,6 +1,16 @@
 FROM fedora:36
-LABEL maintainer="github@vookimedlo.cz"
-LABEL homepage="https://github.com/vookimedlo/docker-images"
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
+      org.opencontainers.image.vendor="Michal Duda" \
+      org.opencontainers.image.title="Fedora 36 GCC Image" \
+      org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw and exiv2."
+
+ARG GIT_COMMIT
+LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
+
+ARG BUILD_DATE
+LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 # Starting from the Fedora 31 - python is python3!!!
 #
@@ -22,4 +32,6 @@ RUN dnf -y update && dnf -y install \
     rpmdevtools       \
     desktop-file-utils \
     LibRaw             \
-    LibRaw-devel
+    LibRaw-devel       \
+    exiv2-libs         \
+    exiv2-devel

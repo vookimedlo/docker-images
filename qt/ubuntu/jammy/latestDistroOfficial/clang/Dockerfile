@@ -1,6 +1,16 @@
 FROM vookimedlo/ubuntu-clang:clang_jammy
-LABEL maintainer="github@vookimedlo.cz"
-LABEL homepage="https://github.com/vookimedlo/docker-images"
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
+      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
+      org.opencontainers.image.vendor="Michal Duda" \
+      org.opencontainers.image.title="Ubuntu Jammy CLANG based Qt development image" \
+      org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw, exiv2 and the disto-Qt development stuff."
+
+ARG GIT_COMMIT
+LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
+
+ARG BUILD_DATE
+LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 RUN apt-get update -qq && apt-get -y install qt6-base-dev qt6-base-dev-tools qt6-base-private-dev qmake6 qt6-image-formats-plugins linguist-qt6 qt6-tools-dev qt6-l10n-tools qt6-tools-dev-tools libopengl-dev libegl1-mesa-dev libegl1-mesa libegl-mesa0 \
 && rm -rf /var/lib/apt/lists/* \

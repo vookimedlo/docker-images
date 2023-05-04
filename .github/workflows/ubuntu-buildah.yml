@@ -1,0 +1,55 @@
+name: Build ubuntu docker images via buildah
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_registry:
+        description: 'Registry'
+        required: true
+        default: 'ghcr.io'
+        type: choice
+        options:
+          - ghcr.io
+          - docker.io
+  workflow_call:
+    inputs:
+      docker_registry:
+        description: 'The target docker image registry'
+        required: true
+        type: string
+
+jobs:
+  build-compilers-ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc, clang ]
+        distribution: [ jammy, kinetic, lunar ]
+    uses: ./.github/workflows/reusable-docker-buildah.yml
+    with:
+      container_file: ./${{ matrix.compiler }}/ubuntu/${{ matrix.distribution }}/Dockerfile
+      docker_image: ubuntu-${{ matrix.compiler }}
+      docker_tags: ${{ matrix.compiler }}_${{ matrix.distribution }}
+      docker_archs: amd64,arm64
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ github.actor }}
+    secrets:
+      registry_pass: ${{ secrets.GITHUB_TOKEN }}
+
+  build-qt-ubuntu:
+    needs: [ build-compilers-ubuntu ]
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc, clang ]
+        distribution: [ jammy, kinetic, lunar ]
+    uses: ./.github/workflows/reusable-docker-buildah.yml
+    with:
+      container_file: ./qt/ubuntu/${{ matrix.distribution }}/latestDistroOfficial/${{ matrix.compiler }}/Dockerfile
+      docker_image: ubuntu-qt
+      docker_tags: qt6_latestDistroOfficial_${{ matrix.compiler }}_${{ matrix.distribution }}
+      docker_archs: amd64,arm64
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ github.actor }}
+    secrets:
+      registry_pass: ${{ secrets.GITHUB_TOKEN }}

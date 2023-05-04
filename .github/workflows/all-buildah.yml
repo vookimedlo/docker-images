@@ -1,0 +1,31 @@
+name: Build all docker images via buildah
+
+on:
+  workflow_dispatch:
+    inputs:
+      docker_registry:
+        description: 'The target docker image registry'
+        required: true
+        default: 'ghcr.io'
+        type: choice
+        options:
+          - ghcr.io
+          - docker.io
+
+jobs:
+  build-alpine-images:
+    uses: ./.github/workflows/alpine-buildah.yml
+    with:
+      docker_registry: ${{ inputs.docker_registry }}
+  build-debian-images:
+    uses: ./.github/workflows/debian-buildah.yml
+    with:
+      docker_registry: ${{ inputs.docker_registry }}
+  build-fedora-images:
+    uses: ./.github/workflows/fedora-buildah.yml
+    with:
+      docker_registry: ${{ inputs.docker_registry }}
+  build-ubuntu-images:
+    uses: ./.github/workflows/ubuntu-buildah.yml
+    with:
+      docker_registry: ${{ inputs.docker_registry }}

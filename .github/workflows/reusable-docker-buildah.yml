@@ -1,0 +1,78 @@
+name: Reusable Docker Images CI via buildah
+
+on:
+  workflow_call:
+    inputs:
+      container_file:
+        description: 'The container file for creating the target docker image.'
+        required: true
+        type: string
+      docker_image:
+        description: 'The target docker image.'
+        required: true
+        type: string
+      docker_tags:
+        description: 'The target docker image tags (space separated).'
+        required: true
+        type: string
+      docker_archs:
+        description: 'The target docker image architectures (comma separated).'
+        required: true
+        type: string
+      docker_registry:
+        description: 'The target docker image registry'
+        required: true
+        type: string
+      registry_user:
+        description: 'The target docker image registry user'
+        required: true
+        type: string
+    secrets:
+      registry_pass:
+        required: true
+
+jobs:
+  build:
+    name: ${{ inputs.docker_image }}:${{ inputs.docker_tags }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install the qemu dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+      - name: Check container files out
+        uses: actions/checkout@v3
+      - name: Update container files
+        run: |
+          find ./gcc/   -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM /FROM docker.io\//'
+          find ./clang/ -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM /FROM docker.io\//'
+          find ./qt/    -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM ${{ inputs.registry_user }}/FROM ${{ inputs.docker_registry }}\/${{ inputs.registry_user }}/'
+      - name: Log in to the container registry
+        uses: redhat-actions/podman-login@v1
+        with:
+            registry: ${{ inputs.docker_registry }}
+            username: ${{ inputs.registry_user }}
+            password: ${{ secrets.registry_pass }}
+      - name: Build a docker image
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ inputs.docker_image }}
+          tags: ${{ inputs.docker_tags }} ${{ github.sha }}
+          archs: ${{ inputs.docker_archs }}
+          containerfiles: |
+            ${{ inputs.container_file }}
+          build-args: |
+            BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            GIT_COMMIT=$(git rev-parse -q --verify HEAD)
+      - name: Push to the registry
+        id: push-to-registry
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ steps.build-image.outputs.image }}
+          tags: ${{ steps.build-image.outputs.tags }}
+          registry: ${{ inputs.docker_registry }}/${{ inputs.registry_user }}
+          username: ${{ inputs.registry_user }}
+          password: ${{ secrets.registry_pass }}
+      - name: Print the image url
+        run: echo "Image pushed to ${{ steps.push-to-registry.outputs.registry-paths }}"

@@ -1,0 +1,69 @@
+name: Reusable docker compiler & qt images CI via buildah
+
+on:
+  workflow_call:
+    inputs:
+      compiler_container_file:
+        description: 'The container file for creating the target compiler docker image.'
+        required: true
+        type: string
+      docker_compiler_image:
+        description: 'The target compiler docker image.'
+        required: true
+        type: string
+      docker_compiler_tags:
+        description: 'The target compiler docker image tags (space separated).'
+        required: true
+        type: string
+      qt_container_file:
+        description: 'The container file for creating the target qt docker image.'
+        required: true
+        type: string
+      docker_qt_image:
+        description: 'The target qt docker image.'
+        required: true
+        type: string
+      docker_qt_tags:
+        description: 'The target qt docker image tags (space separated).'
+        required: true
+        type: string
+      docker_archs:
+        description: 'The target docker image architectures (comma separated).'
+        required: true
+        type: string
+      docker_registry:
+        description: 'The target docker image registry'
+        required: true
+        type: string
+      registry_user:
+        description: 'The target docker image registry user'
+        required: true
+        type: string
+    secrets:
+      registry_pass:
+        required: true
+
+jobs:
+  build-compiler-image:
+    uses: ./.github/workflows/reusable-docker-component-buildah.yml
+    with:
+      container_file: ${{ inputs.compiler_container_file }}
+      docker_image: ${{ inputs.docker_compiler_image }}
+      docker_tags: ${{ inputs.docker_compiler_tags }}
+      docker_archs: ${{ inputs.docker_archs }}
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ inputs.registry_user }}
+    secrets:
+      registry_pass: ${{ secrets.registry_pass }}
+  build-qt-image:
+    needs: [ build-compiler-image ]
+    uses: ./.github/workflows/reusable-docker-component-buildah.yml
+    with:
+      container_file: ${{ inputs.qt_container_file }}
+      docker_image: ${{ inputs.docker_qt_image }}
+      docker_tags: ${{ inputs.docker_qt_tags }}
+      docker_archs: ${{ inputs.docker_archs }}
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ inputs.registry_user }}
+    secrets:
+      registry_pass: ${{ secrets.registry_pass }}

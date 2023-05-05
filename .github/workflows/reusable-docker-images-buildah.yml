@@ -1,0 +1,63 @@
+name: Reusable docker images CI via buildah
+
+on:
+  workflow_call:
+    inputs:
+      distribution:
+        description: 'The target docker image distribution.'
+        required: true
+        type: string
+      version:
+        description: 'The target docker image distribution version.'
+        required: true
+        type: string
+      compiler:
+        description: 'The target docker image compiler.'
+        required: true
+        type: string
+      docker_archs:
+        description: 'The target docker image architectures (comma separated).'
+        required: true
+        type: string
+      docker_registry:
+        description: 'The target docker image registry.'
+        required: true
+        type: string
+    secrets:
+      DOCKER_TOKEN:
+        required: true
+
+jobs:
+  build-ghcr:
+    if: ${{ inputs.docker_registry == 'ghcr.io' }}
+    name: ${{ inputs.distribution }}-${{ inputs.version }}-${{ inputs.compiler }}
+    uses: ./.github/workflows/reusable-docker-compiler-qt-builadah.yml
+    with:
+      compiler_container_file: ./${{ inputs.compiler }}/${{ inputs.distribution }}/${{ inputs.version }}/Dockerfile
+      docker_compiler_image: ${{ inputs.distribution }}-${{ inputs.compiler }}
+      docker_compiler_tags: ${{ inputs.compiler }}_${{ inputs.version }}
+      qt_container_file: ./qt/${{ inputs.distribution }}/${{ inputs.version }}/latestDistroOfficial/${{ inputs.compiler }}/Dockerfile
+      docker_qt_image: ${{ inputs.distribution }}-qt
+      docker_qt_tags: qt6_latestDistroOfficial_${{ inputs.compiler }}_${{ inputs.version }}
+      docker_archs: ${{ inputs.docker_archs }}
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ github.actor }}
+    secrets:
+      registry_pass: ${{ secrets.GITHUB_TOKEN }}
+
+  build-docker:
+    if: ${{ inputs.docker_registry == 'docker.io' }}
+    name: ${{ inputs.distribution }}-${{ inputs.version }}-${{ inputs.compiler }}
+    uses: ./.github/workflows/reusable-docker-compiler-qt-builadah.yml
+    with:
+      compiler_container_file: ./${{ inputs.compiler }}/${{ inputs.distribution }}/${{ inputs.version }}/Dockerfile
+      docker_compiler_image: ${{ inputs.distribution }}-${{ inputs.compiler }}
+      docker_compiler_tags: ${{ inputs.compiler }}_${{ inputs.version }}
+      qt_container_file: ./qt/${{ inputs.distribution }}/${{ inputs.version }}/latestDistroOfficial/${{ inputs.compiler }}/Dockerfile
+      docker_qt_image: ${{ inputs.distribution }}-qt
+      docker_qt_tags: qt6_latestDistroOfficial_${{ inputs.compiler }}_${{ inputs.version }}
+      docker_archs: ${{ inputs.docker_archs }}
+      docker_registry: ${{ inputs.docker_registry }}
+      registry_user: ${{ github.actor }}
+    secrets:
+      registry_pass: ${{ secrets.DOCKER_TOKEN }}

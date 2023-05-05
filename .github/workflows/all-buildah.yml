@@ -11,21 +11,88 @@ on:
         options:
           - ghcr.io
           - docker.io
-
+      alpine:
+        description: 'Alpine images'
+        default: true
+        type: boolean
+        required: true
+      debian:
+        description: 'Debian images'
+        default: true
+        type: boolean
+        required: true
+      fedora:
+        description: 'Fedora images'
+        default: true
+        type: boolean
+        required: true
+      ubuntu:
+        description: 'Ubuntu images'
+        default: true
+        type: boolean
+        required: true
 jobs:
   build-alpine-images:
-    uses: ./.github/workflows/alpine-buildah.yml
+    if: ${{ inputs.alpine }}
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc ]
+        version: [ latest ]
+    uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
+      distribution: alpine
+      version: ${{ matrix.version }}
+      compiler: ${{ matrix.compiler }}
+      docker_archs: amd64
       docker_registry: ${{ inputs.docker_registry }}
+    secrets:
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
   build-debian-images:
-    uses: ./.github/workflows/debian-buildah.yml
+    if: ${{ inputs.debian }}
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc, clang ]
+        version: [ stable, bullseye, bookworm ]
+    uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
+      distribution: debian
+      version: ${{ matrix.version }}
+      compiler: ${{ matrix.compiler }}
+      docker_archs: amd64,arm64
       docker_registry: ${{ inputs.docker_registry }}
+    secrets:
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
   build-fedora-images:
-    uses: ./.github/workflows/fedora-buildah.yml
+    if: ${{ inputs.fedora }}
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc, clang ]
+        version: [ stable, 38, 37 ]
+    uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
+      distribution: fedora
+      version: ${{ matrix.version }}
+      compiler: ${{ matrix.compiler }}
+      docker_archs: amd64,arm64
       docker_registry: ${{ inputs.docker_registry }}
+    secrets:
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
   build-ubuntu-images:
-    uses: ./.github/workflows/ubuntu-buildah.yml
+    if: ${{ inputs.ubuntu }}
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ gcc, clang ]
+        version: [ jammy, kinetic, lunar ]
+    uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
+      distribution: ubuntu
+      version: ${{ matrix.version }}
+      compiler: ${{ matrix.compiler }}
+      docker_archs: amd64,arm64
       docker_registry: ${{ inputs.docker_registry }}
+    secrets:
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}

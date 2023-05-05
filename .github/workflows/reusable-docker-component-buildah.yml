@@ -1,4 +1,4 @@
-name: Reusable Docker Images CI via buildah
+name: Reusable docker component images CI via buildah
 
 on:
   workflow_call:

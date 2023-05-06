@@ -44,7 +44,7 @@ jobs:
       distribution: alpine
       version: ${{ matrix.version }}
       compiler: ${{ matrix.compiler }}
-      docker_archs: amd64
+      docker_platforms: linux/amd64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
@@ -60,7 +60,7 @@ jobs:
       distribution: debian
       version: ${{ matrix.version }}
       compiler: ${{ matrix.compiler }}
-      docker_archs: amd64,arm64
+      docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
@@ -76,7 +76,7 @@ jobs:
       distribution: fedora
       version: ${{ matrix.version }}
       compiler: ${{ matrix.compiler }}
-      docker_archs: amd64,arm64
+      docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
@@ -92,7 +92,7 @@ jobs:
       distribution: ubuntu
       version: ${{ matrix.version }}
       compiler: ${{ matrix.compiler }}
-      docker_archs: amd64,arm64
+      docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
       DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}

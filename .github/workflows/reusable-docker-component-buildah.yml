@@ -15,8 +15,8 @@ on:
         description: 'The target docker image tags (space separated).'
         required: true
         type: string
-      docker_archs:
-        description: 'The target docker image architectures (comma separated).'
+      docker_platforms:
+        description: 'The target docker image platforms (comma separated).'
         required: true
         type: string
       docker_registry:
@@ -42,6 +42,11 @@ jobs:
           sudo apt-get install -y qemu-user-static
       - name: Check container files out
         uses: actions/checkout@v3
+      - name: Value evaluation
+        id: value-eval
+        run: |
+          echo "GIT_COMMIT=$(git rev-parse -q --verify HEAD)" >> "$GITHUB_OUTPUT"
+          echo "BUILD_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
       - name: Update container files
         run: |
           find ./gcc/   -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM /FROM docker.io\//'
@@ -58,13 +63,14 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: ${{ inputs.docker_image }}
-          tags: ${{ inputs.docker_tags }} ${{ github.sha }}
-          archs: ${{ inputs.docker_archs }}
+          tags: ${{ inputs.docker_tags }}
+          platforms: ${{ inputs.docker_platforms }}
+          oci: true
           containerfiles: |
             ${{ inputs.container_file }}
           build-args: |
-            BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-            GIT_COMMIT=$(git rev-parse -q --verify HEAD)
+            BUILD_DATE=${{ steps.value-eval.outputs.BUILD_DATE }}
+            GIT_COMMIT=${{ steps.value-eval.outputs.GIT_COMMIT }}
       - name: Push to the registry
         id: push-to-registry
         uses: redhat-actions/push-to-registry@v2

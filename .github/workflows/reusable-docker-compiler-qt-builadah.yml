@@ -27,8 +27,8 @@ on:
         description: 'The target qt docker image tags (space separated).'
         required: true
         type: string
-      docker_archs:
-        description: 'The target docker image architectures (comma separated).'
+      docker_platforms:
+        description: 'The target docker image platforms (comma separated).'
         required: true
         type: string
       docker_registry:
@@ -50,7 +50,7 @@ jobs:
       container_file: ${{ inputs.compiler_container_file }}
       docker_image: ${{ inputs.docker_compiler_image }}
       docker_tags: ${{ inputs.docker_compiler_tags }}
-      docker_archs: ${{ inputs.docker_archs }}
+      docker_platforms: ${{ inputs.docker_platforms }}
       docker_registry: ${{ inputs.docker_registry }}
       registry_user: ${{ inputs.registry_user }}
     secrets:
@@ -62,7 +62,7 @@ jobs:
       container_file: ${{ inputs.qt_container_file }}
       docker_image: ${{ inputs.docker_qt_image }}
       docker_tags: ${{ inputs.docker_qt_tags }}
-      docker_archs: ${{ inputs.docker_archs }}
+      docker_platforms: ${{ inputs.docker_platforms }}
       docker_registry: ${{ inputs.docker_registry }}
       registry_user: ${{ inputs.registry_user }}
     secrets:

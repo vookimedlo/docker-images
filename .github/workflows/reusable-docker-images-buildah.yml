@@ -15,8 +15,8 @@ on:
         description: 'The target docker image compiler.'
         required: true
         type: string
-      docker_archs:
-        description: 'The target docker image architectures (comma separated).'
+      docker_platforms:
+        description: 'The target docker image platforms (comma separated).'
         required: true
         type: string
       docker_registry:
@@ -39,7 +39,7 @@ jobs:
       qt_container_file: ./qt/${{ inputs.distribution }}/${{ inputs.version }}/latestDistroOfficial/${{ inputs.compiler }}/Dockerfile
       docker_qt_image: ${{ inputs.distribution }}-qt
       docker_qt_tags: qt6_latestDistroOfficial_${{ inputs.compiler }}_${{ inputs.version }}
-      docker_archs: ${{ inputs.docker_archs }}
+      docker_platforms: ${{ inputs.docker_platforms }}
       docker_registry: ${{ inputs.docker_registry }}
       registry_user: ${{ github.actor }}
     secrets:
@@ -56,7 +56,7 @@ jobs:
       qt_container_file: ./qt/${{ inputs.distribution }}/${{ inputs.version }}/latestDistroOfficial/${{ inputs.compiler }}/Dockerfile
       docker_qt_image: ${{ inputs.distribution }}-qt
       docker_qt_tags: qt6_latestDistroOfficial_${{ inputs.compiler }}_${{ inputs.version }}
-      docker_archs: ${{ inputs.docker_archs }}
+      docker_platforms: ${{ inputs.docker_platforms }}
       docker_registry: ${{ inputs.docker_registry }}
       registry_user: ${{ github.actor }}
     secrets:

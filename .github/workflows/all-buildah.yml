@@ -11,6 +11,7 @@ on:
         options:
           - ghcr.io
           - docker.io
+          - quay.io
       alpine:
         description: 'Alpine images'
         default: true
@@ -47,7 +48,7 @@ jobs:
       docker_platforms: linux/amd64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      inherit
   build-debian-images:
     if: ${{ inputs.debian }}
     strategy:
@@ -62,8 +63,7 @@ jobs:
       compiler: ${{ matrix.compiler }}
       docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
-    secrets:
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+    secrets: inherit
   build-fedora-images:
     if: ${{ inputs.fedora }}
     strategy:
@@ -78,8 +78,7 @@ jobs:
       compiler: ${{ matrix.compiler }}
       docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
-    secrets:
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+    secrets: inherit
   build-ubuntu-images:
     if: ${{ inputs.ubuntu }}
     strategy:
@@ -94,5 +93,4 @@ jobs:
       compiler: ${{ matrix.compiler }}
       docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
-    secrets:
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+    secrets: inherit

@@ -16,9 +16,10 @@ CI services:
 Images for multiple architectures are hosted at:
  - [Docker Hub][1]
  - [GitHub Packages][2]
- 
+ - [Quay Containers][5]
  
  [1]: https://hub.docker.com/u/vookimedlo/
  [2]: https://github.com/vookimedlo?tab=packages&repo_name=docker-images
  [3]: https://github.com/vookimedlo/vooki-image-viewer/actions
  [4]: https://www.qt.io/
+ [5]: https://quay.io/vookimedlo/

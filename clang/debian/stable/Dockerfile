@@ -12,8 +12,7 @@ LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
 ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
-ENV DEBIAN_FRONTEND=noninteractive
-
+ARG DEBIAN_FRONTEND=noninteractive
 RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >>/etc/apt/sources.list \
 && apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common          \

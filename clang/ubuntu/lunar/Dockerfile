@@ -12,8 +12,8 @@ LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
 ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
-ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
+ARG DEBIAN_FRONTEND=noninteractive
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
 &&  apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \

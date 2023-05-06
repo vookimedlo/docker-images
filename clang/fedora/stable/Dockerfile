@@ -1,10 +1,11 @@
 FROM fedora:latest
-LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
-      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
-      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
-      org.opencontainers.image.vendor="Michal Duda" \
-      org.opencontainers.image.title="Fedora Stable CLANG Image" \
-      org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw and exiv2."
+
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
+LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
+LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
+LABEL org.opencontainers.image.vendor="Michal Duda"
+LABEL org.opencontainers.image.title="Fedora stable CLANG image"
+LABEL org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT
 LABEL org.opencontainers.image.revision="${GIT_COMMIT}"

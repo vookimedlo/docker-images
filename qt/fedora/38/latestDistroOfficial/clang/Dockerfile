@@ -1,10 +1,11 @@
 FROM vookimedlo/fedora-clang:clang_38
-LABEL maintainer="Michal Duda <github@vookimedlo.cz>" \
-      org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>" \
-      org.opencontainers.image.url="https://github.com/vookimedlo/docker-images" \
-      org.opencontainers.image.vendor="Michal Duda" \
-      org.opencontainers.image.title="Fedora 38 CLANG based Qt development image" \
-      org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw, exiv2 and the disto-Qt development stuff."
+
+LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
+LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
+LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
+LABEL org.opencontainers.image.vendor="Michal Duda"
+LABEL org.opencontainers.image.title="Fedora 38 CLANG based Qt development image"
+LABEL org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw, exiv2 and the distro-Qt development stuff."
 
 ARG GIT_COMMIT
 LABEL org.opencontainers.image.revision="${GIT_COMMIT}"

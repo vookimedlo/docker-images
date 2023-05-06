@@ -1,9 +1,10 @@
 FROM debian:stable-slim
+
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Debian Stable CLANG Image"
+LABEL org.opencontainers.image.title="Debian stable CLANG image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT

@@ -36,6 +36,10 @@ jobs:
     name: ${{ inputs.docker_image }}:${{ inputs.docker_tags }}
     runs-on: ubuntu-latest
     steps:
+      - name: Install Regctl
+        uses: vookimedlo/setup-regctl@v1
+        with:
+          regctl-prebuilt: 'true'
       - name: Install the qemu dependency
         run: |
           sudo apt-get update
@@ -55,9 +59,15 @@ jobs:
       - name: Log in to the container registry
         uses: redhat-actions/podman-login@v1
         with:
-            registry: ${{ inputs.docker_registry }}
-            username: ${{ inputs.registry_user }}
-            password: ${{ secrets.registry_pass }}
+          registry: ${{ inputs.docker_registry }}
+          username: ${{ inputs.registry_user }}
+          password: ${{ secrets.registry_pass }}
+      - name: Log in via the Docker ecosystem
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ inputs.docker_registry }}
+          username: ${{ inputs.registry_user }}
+          password: ${{ secrets.registry_pass }}
       - name: Build a docker image
         id: build-image
         uses: redhat-actions/buildah-build@v2
@@ -80,5 +90,34 @@ jobs:
           registry: ${{ inputs.docker_registry }}/${{ inputs.registry_user }}
           username: ${{ inputs.registry_user }}
           password: ${{ secrets.registry_pass }}
+          extra-args: --format=oci
       - name: Print the image url
         run: echo "Image pushed to ${{ steps.push-to-registry.outputs.registry-paths }}"
+      - name: Inspect manifest
+        shell: bash
+        run: |
+          sleep 5
+
+          readonly image="${{ inputs.docker_registry }}/${{ inputs.registry_user }}/${{ steps.build-image.outputs.image-with-tag }}"
+          readonly isMultiArch=$(regctl manifest get $image --format '{{ .IsList }}')
+
+          echo "Is: $isMultiArch"
+  
+          if [[ "$isMultiArch" == "true" ]]; then
+            regctl image inspect $image --format '{{range $k, $v := .Config.Labels}}{{$k}} = {{$v}}{{println}}{{end}}' | \
+              grep -E '(org.opencontainers.image.authors|org.opencontainers.image.description|org.opencontainers.image.revision|org.opencontainers.image.title|org.opencontainers.image.url|org.opencontainers.image.vendor)' > labels
+
+            #regctl image inspect $image --format '{{range $k, $v := .Config.Labels}}{{$k}} = {{$v}}{{println}}{{end}}' | \
+            #  grep 'org.opencontainers.image.description' > labels
+          
+            readonly annotateCommands=$(cat labels | while read line;   \
+              do echo $line | sed "s/\(.*\) = \(.*\)$/--annotation \1='\2'/"; \
+              done | tr '\n' ' ')
+          
+            if [[ ! -z "$annotateCommands" ]]; then
+              echo "regctl image mod --replace $annotateCommands $image" >modif.sh
+              chmod 755 modif.sh
+              cat modif.sh
+              sh -c ./modif.sh
+            fi
+          fi

@@ -94,21 +94,17 @@ jobs:
       - name: Print the image url
         run: echo "Image pushed to ${{ steps.push-to-registry.outputs.registry-paths }}"
       - name: Inspect manifest
+        if: ${{ inputs.docker_registry != 'quay.io' }}
         shell: bash
         run: |
           sleep 5
 
           readonly image="${{ inputs.docker_registry }}/${{ inputs.registry_user }}/${{ steps.build-image.outputs.image-with-tag }}"
           readonly isMultiArch=$(regctl manifest get $image --format '{{ .IsList }}')
-
-          echo "Is: $isMultiArch"
   
           if [[ "$isMultiArch" == "true" ]]; then
             regctl image inspect $image --format '{{range $k, $v := .Config.Labels}}{{$k}} = {{$v}}{{println}}{{end}}' | \
               grep -E '(org.opencontainers.image.authors|org.opencontainers.image.description|org.opencontainers.image.revision|org.opencontainers.image.title|org.opencontainers.image.url|org.opencontainers.image.vendor)' > labels
-
-            #regctl image inspect $image --format '{{range $k, $v := .Config.Labels}}{{$k}} = {{$v}}{{println}}{{end}}' | \
-            #  grep 'org.opencontainers.image.description' > labels
           
             readonly annotateCommands=$(cat labels | while read line;   \
               do echo $line | sed "s/\(.*\) = \(.*\)$/--annotation \1='\2'/"; \

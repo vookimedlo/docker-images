@@ -39,7 +39,8 @@ jobs:
       - name: Install Regctl
         uses: vookimedlo/setup-regctl@v1
         with:
-          regctl-prebuilt: 'true'
+          regctl-prebuilt: 'false'
+          regctl-version: 'main'
       - name: Install the qemu dependency
         run: |
           sudo apt-get update
@@ -94,7 +95,6 @@ jobs:
       - name: Print the image url
         run: echo "Image pushed to ${{ steps.push-to-registry.outputs.registry-paths }}"
       - name: Inspect manifest
-        if: ${{ inputs.docker_registry != 'quay.io' }}
         shell: bash
         run: |
           sleep 5

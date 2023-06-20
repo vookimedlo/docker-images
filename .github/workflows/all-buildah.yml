@@ -55,7 +55,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [ gcc, clang ]
-        version: [ stable, bullseye, bookworm ]
+        version: [ stable, bullseye, bookworm, trixie ]
     uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
       distribution: debian

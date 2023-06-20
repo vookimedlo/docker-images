@@ -1,10 +1,10 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Debian Bookworm CLANG image"
+LABEL org.opencontainers.image.title="Debian Trixie CLANG image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT
@@ -30,9 +30,9 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     bzr-builddeb                        \
     git-buildpackage                    \
     moreutils                           \
-    libraw-bin                          \
-    libraw-dev                          \
-    libexiv2-dev                        \
+    libraw-bin \
+    libraw-dev \
+    libexiv2-dev \
 && rm -rf /var/lib/apt/lists/*          \
 && ln -sf /usr/bin/clang++-15 /usr/bin/clang++ && ln -sf /usr/bin/clang-15 /usr/bin/clang \
 && echo "export CXX=clang++" >> /etc/profile \

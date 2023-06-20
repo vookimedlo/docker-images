@@ -1,10 +1,10 @@
-FROM debian:stable-slim
+FROM debian:trixie-slim
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Debian stable GCC image"
+LABEL org.opencontainers.image.title="Debian Trixie GCC image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT
@@ -14,8 +14,7 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >>/etc/apt/sources.list \
-&&  apt-get update && apt-get -y --allow-unauthenticated install \
+RUN apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \
     g++                        \
     gcc                        \
@@ -36,4 +35,3 @@ RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-f
     libraw-dev                 \
     libexiv2-dev               \
 && rm -rf /var/lib/apt/lists/*
-

@@ -36,12 +36,11 @@ jobs:
     name: ${{ inputs.docker_image }}:${{ inputs.docker_tags }}
     runs-on: ubuntu-latest
     steps:
-      - name: Install Regctl [main, from-source]
+      - name: Install Regctl [v0.5.0, prebuilt]
         if: ${{ inputs.docker_registry != 'docker.io' }}
         uses: vookimedlo/setup-regctl@v1
         with:
-          regctl-prebuilt: 'false'
-          regctl-version: 'main'
+          regctl-version: 'v0.5.0'
       - name: Install Regctl [v0.4.8, prebuilt]
         if: ${{ inputs.docker_registry == 'docker.io' }}
         uses: vookimedlo/setup-regctl@v1

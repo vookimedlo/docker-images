@@ -28,7 +28,6 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     libtool                    \
     pkg-config                 \
     dh-make                    \
-    bzr-builddeb               \
     git-buildpackage           \
     moreutils                  \
     libraw-bin                 \

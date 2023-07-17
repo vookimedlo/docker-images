@@ -29,7 +29,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     libtool          \
     pkg-config       \
     dh-make          \
-    bzr-builddeb     \
     git-buildpackage \
     moreutils        \
     libraw-bin \

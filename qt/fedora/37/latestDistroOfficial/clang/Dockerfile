@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.revision="${GIT_COMMIT}"
 ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
-RUN dnf install -y qt6-qtbase qt6-qtimageformats qt6-qtbase-devel qt6-linguist qt6-qttools-devel
+RUN dnf install -y qt6-qtbase qt6-qtimageformats qt6-qtbase-devel qt6-linguist qt6-qttools-devel libjxl-devel
 
 RUN echo "export QMAKESPEC=/usr/lib64/qt6/mkspecs/linux-clang" >> /etc/profile
 

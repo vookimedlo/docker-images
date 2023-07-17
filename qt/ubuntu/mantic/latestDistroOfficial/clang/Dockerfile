@@ -1,10 +1,10 @@
-FROM vookimedlo/ubuntu-clang:clang_kinetic
+FROM vookimedlo/ubuntu-clang:clang_mantic
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Ubuntu Kinetic CLANG based Qt development image"
+LABEL org.opencontainers.image.title="Ubuntu Mantic CLANG based Qt development image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw, exiv2 and the distro-Qt development stuff."
 
 ARG GIT_COMMIT

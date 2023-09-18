@@ -69,7 +69,7 @@ jobs:
           username: ${{ inputs.registry_user }}
           password: ${{ secrets.registry_pass }}
       - name: Log in via the Docker ecosystem
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ${{ inputs.docker_registry }}
           username: ${{ inputs.registry_user }}

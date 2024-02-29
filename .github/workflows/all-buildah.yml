@@ -85,7 +85,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [ gcc, clang ]
-        version: [ jammy, lunar, mantic ]
+        version: [ jammy, mantic, noble ]
     uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
       distribution: ubuntu

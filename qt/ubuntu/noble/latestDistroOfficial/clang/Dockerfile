@@ -1,10 +1,10 @@
-FROM vookimedlo/ubuntu-gcc:gcc_lunar
+FROM vookimedlo/ubuntu-clang:clang_noble
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Ubuntu Lunar GCC based Qt development image"
+LABEL org.opencontainers.image.title="Ubuntu Noble CLANG based Qt development image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw, exiv2 and the distro-Qt development stuff."
 
 ARG GIT_COMMIT

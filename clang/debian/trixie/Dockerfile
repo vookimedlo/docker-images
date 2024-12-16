@@ -15,7 +15,6 @@ LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
-    software-properties-common          \
     clang-16                            \
     make                                \
     cmake                               \

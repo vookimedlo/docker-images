@@ -1,10 +1,10 @@
-FROM vookimedlo/fedora-gcc:gcc_39
+FROM vookimedlo/fedora-clang:clang_42
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Fedora 39 GCC based Qt development image"
+LABEL org.opencontainers.image.title="Fedora 42 CLANG based Qt development image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw, exiv2 and the distro-Qt development stuff."
 
 ARG GIT_COMMIT
@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 RUN dnf install -y qt6-qtbase qt6-qtimageformats qt6-qtbase-devel qt6-linguist qt6-qttools-devel libjxl-devel
 
-RUN echo "export QMAKESPEC=/usr/lib64/qt6/mkspecs/linux-g++" >> /etc/profile
+RUN echo "export QMAKESPEC=/usr/lib64/qt6/mkspecs/linux-clang" >> /etc/profile
 

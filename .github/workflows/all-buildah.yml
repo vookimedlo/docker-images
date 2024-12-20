@@ -70,7 +70,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [ gcc, clang ]
-        version: [ stable, 41, 40, 39 ]
+        version: [ stable, 42, 41, 40 ]
     uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
       distribution: fedora
@@ -85,7 +85,7 @@ jobs:
       fail-fast: false
       matrix:
         compiler: [ gcc, clang ]
-        version: [ jammy, noble, oracular ]
+        version: [ jammy, noble, oracular, plucky ]
     uses: ./.github/workflows/reusable-docker-images-buildah.yml
     with:
       distribution: ubuntu

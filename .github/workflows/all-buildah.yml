@@ -45,7 +45,7 @@ jobs:
       distribution: alpine
       version: ${{ matrix.version }}
       compiler: ${{ matrix.compiler }}
-      docker_platforms: linux/amd64
+      docker_platforms: linux/amd64,linux/arm64
       docker_registry: ${{ inputs.docker_registry }}
     secrets:
       inherit

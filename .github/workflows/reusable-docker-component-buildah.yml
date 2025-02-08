@@ -50,7 +50,16 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt upgrade -y
-          sudo apt-get install -y qemu-user-static
+          sudo apt install make -y
+          sudo apt install ninja-build -y
+          sudo apt-get install libpixman-1-dev
+          wget https://download.qemu.org/qemu-7.2.15.tar.xz
+          tar xvJf qemu-7.2.15.tar.xz
+          cd qemu-7.2.15
+          ./configure
+          make
+          sudo make install
+          #sudo apt-get install -y qemu-user-static
       - name: Check container files out
         uses: actions/checkout@v4
       - name: Value evaluation

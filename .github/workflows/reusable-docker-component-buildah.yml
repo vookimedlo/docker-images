@@ -49,15 +49,12 @@ jobs:
       - name: Install QEMU dependencies
         run: |
           sudo apt-get update
+          sudo apt-get upgrade -y
           sudo apt-get install -y binfmt-support qemu-user-static
           sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-      - name: Configure QEMU memory limits
-        run: |
-          echo 'QEMU_OPTS="-m 2G"' | sudo tee -a /etc/environment
-      - name: Verify QEMU installation
-        run: |
-          qemu-x86_64 --version || true
-          ls -l /proc/sys/fs/binfmt_misc/
+#      - name: Configure QEMU memory limits
+#        run: |
+#          echo 'QEMU_OPTS="-m 2G"' | sudo tee -a /etc/environment
       - name: Configure buildah for cross-compilation
         run: |
           sudo mkdir -p /etc/containers

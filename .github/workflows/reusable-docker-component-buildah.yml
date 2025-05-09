@@ -36,9 +36,6 @@ jobs:
     name: ${{ inputs.docker_image }}:${{ inputs.docker_tags }}
     runs-on: ubuntu-latest
     steps:
-      - name: docker rm
-        run: |
-          sudo docker run --privileged --rm multiarch/qemu-user-static --reset -p yes -c yes
       - name: Install Regctl [v0.5.0, prebuilt]
         if: ${{ inputs.docker_registry != 'docker.io' }}
         uses: vookimedlo/setup-regctl@v1
@@ -49,11 +46,19 @@ jobs:
         uses: vookimedlo/setup-regctl@v1
         with:
           regctl-version: 'v0.4.8'
-      - name: Install the qemu dependency
+      - name: Install QEMU dependencies
         run: |
           sudo apt-get update
-          sudo apt upgrade -y
-          sudo apt-get install -y qemu-user-static
+          sudo apt-get install -y qemu binfmt-support qemu-user-static
+          sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+      - name: Configure QEMU memory limits
+        run: |
+          echo 'QEMU_OPTS="-m 2G"' | sudo tee -a /etc/environment
+      - name: Verify QEMU installation
+        run: |
+          qemu-x86_64 --version || true
+          ls -l /proc/sys/fs/binfmt_misc/
+
       - name: Check container files out
         uses: actions/checkout@v4
       - name: Value evaluation

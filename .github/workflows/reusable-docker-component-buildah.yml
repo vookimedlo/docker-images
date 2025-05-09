@@ -49,7 +49,7 @@ jobs:
       - name: Install QEMU dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qemu binfmt-support qemu-user-static
+          sudo apt-get install -y binfmt-support qemu-user-static
           sudo docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
       - name: Configure QEMU memory limits
         run: |

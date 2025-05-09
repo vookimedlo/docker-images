@@ -36,6 +36,9 @@ jobs:
     name: ${{ inputs.docker_image }}:${{ inputs.docker_tags }}
     runs-on: ubuntu-latest
     steps:
+      - name: docker rm
+        run: |
+          sudo docker run --privileged --rm multiarch/qemu-user-static --reset -p yes -c yes
       - name: Install Regctl [v0.5.0, prebuilt]
         if: ${{ inputs.docker_registry != 'docker.io' }}
         uses: vookimedlo/setup-regctl@v1

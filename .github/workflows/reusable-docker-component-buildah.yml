@@ -99,6 +99,7 @@ jobs:
             GIT_COMMIT=${{ steps.value-eval.outputs.GIT_COMMIT }}
           extra-args: |
             --isolation=chroot
+            --storage-driver=vfs
       - name: Push to the registry
         id: push-to-registry
         uses: redhat-actions/push-to-registry@v2

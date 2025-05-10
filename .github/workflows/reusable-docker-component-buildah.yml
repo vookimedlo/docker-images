@@ -97,8 +97,6 @@ jobs:
           build-args: |
             BUILD_DATE=${{ steps.value-eval.outputs.BUILD_DATE }}
             GIT_COMMIT=${{ steps.value-eval.outputs.GIT_COMMIT }}
-          extra-args: |
-            --storage-driver=vfs
       - name: Push to the registry
         id: push-to-registry
         uses: redhat-actions/push-to-registry@v2

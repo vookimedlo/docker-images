@@ -14,7 +14,7 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade -y && apt-get -y --allow-unauthenticated reinstall libc-bin libc6 apt-utils && apt purge -y -f python3 && apt-get -y --allow-unauthenticated install python3-minimal && apt-get -y --allow-unauthenticated install \
+RUN apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \
     g++                        \
     gcc                        \

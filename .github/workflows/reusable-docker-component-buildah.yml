@@ -55,10 +55,10 @@ jobs:
 #      - name: Configure QEMU memory limits
 #        run: |
 #          echo 'QEMU_OPTS="-m 2G"' | sudo tee -a /etc/environment
-      - name: Configure buildah for cross-compilation
-        run: |
-          sudo mkdir -p /etc/containers
-          echo 'unqualified-search-registries = ["docker.io", "quay.io", "ghcr.io"]' | sudo tee /etc/containers/registries.conf
+#      - name: Configure buildah for cross-compilation
+#        run: |
+#          sudo mkdir -p /etc/containers
+#          echo 'unqualified-search-registries = ["docker.io", "quay.io", "ghcr.io"]' | sudo tee /etc/containers/registries.conf
 
       - name: Check container files out
         uses: actions/checkout@v4
@@ -98,7 +98,6 @@ jobs:
             BUILD_DATE=${{ steps.value-eval.outputs.BUILD_DATE }}
             GIT_COMMIT=${{ steps.value-eval.outputs.GIT_COMMIT }}
           extra-args: |
-            --isolation=chroot
             --storage-driver=vfs
       - name: Push to the registry
         id: push-to-registry

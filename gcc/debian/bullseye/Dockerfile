@@ -14,8 +14,9 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get -y --allow-unauthenticated reinstall libc-bin libc6
 RUN echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >>/etc/apt/sources.list \
-&&  apt-get update && apt-get -y --allow-unauthenticated reinstall libc-bin libc6 &&  apt-get -y --allow-unauthenticated install \
+&&  apt-get -y --allow-unauthenticated install \
     software-properties-common \
     g++                        \
     gcc                        \

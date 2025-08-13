@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.created="${BUILD_DATE}"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y --allow-unauthenticated install \
-    clang-17                            \
+    clang-19                            \
     make                                \
     cmake                               \
     git                                 \
@@ -32,6 +32,6 @@ RUN apt-get update && apt-get -y --allow-unauthenticated install \
     libraw-dev \
     libexiv2-dev \
 && rm -rf /var/lib/apt/lists/*          \
-&& ln -sf /usr/bin/clang++-17 /usr/bin/clang++ && ln -sf /usr/bin/clang-17 /usr/bin/clang \
+&& ln -sf /usr/bin/clang++-19 /usr/bin/clang++ && ln -sf /usr/bin/clang-19 /usr/bin/clang \
 && echo "export CXX=clang++" >> /etc/profile \
 && echo "export CC=clang" >> /etc/profile

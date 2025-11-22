@@ -1,4 +1,4 @@
-FROM fedora:42
+FROM fedora:43
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"

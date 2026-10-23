@@ -1,10 +1,10 @@
-FROM fedora:42
+FROM fedora:45
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Fedora 42 CLANG image"
+LABEL org.opencontainers.image.title="Fedora 45 CLANG image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, RPM packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT

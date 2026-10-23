@@ -1,10 +1,10 @@
-FROM ubuntu:questing
+FROM ubuntu:stonking
 
 LABEL maintainer="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.authors="Michal Duda <github@vookimedlo.cz>"
 LABEL org.opencontainers.image.url="https://github.com/vookimedlo/docker-images"
 LABEL org.opencontainers.image.vendor="Michal Duda"
-LABEL org.opencontainers.image.title="Ubuntu Questing Quokka CLANG image"
+LABEL org.opencontainers.image.title="Ubuntu Stonking Stingray CLANG image"
 LABEL org.opencontainers.image.description="Provides compiler, CMake, DEB packaging support, libraw and exiv2."
 
 ARG GIT_COMMIT
@@ -18,7 +18,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
 &&  apt-get update && apt-get -y --allow-unauthenticated install \
     software-properties-common \
-    clang-20   \
+    clang-21   \
     make       \
     cmake      \
     git        \

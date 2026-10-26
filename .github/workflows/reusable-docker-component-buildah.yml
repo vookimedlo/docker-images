@@ -64,7 +64,7 @@ jobs:
           find ./clang/ -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM /FROM docker.io\//'
           find ./qt/    -name "Dockerfile" -print0 | xargs -L 1 -0 sed -i'.orig' 's/FROM ${{ inputs.registry_user }}/FROM ${{ inputs.docker_registry }}\/${{ inputs.registry_user }}/'
       - name: Log in to the container registry
-        uses: redhat-actions/podman-login@v1
+        uses: redhat-actions/podman-login@v2
         with:
           registry: ${{ inputs.docker_registry }}
           username: ${{ inputs.registry_user }}

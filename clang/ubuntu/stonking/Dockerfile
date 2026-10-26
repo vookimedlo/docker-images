@@ -35,6 +35,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     libraw-dev \
     libexiv2-dev \
 && rm -rf /var/lib/apt/lists/* \
-&& ln -sf /usr/bin/clang++-20 /usr/bin/clang++ && ln -sf /usr/bin/clang-20 /usr/bin/clang \
+&& ln -sf /usr/bin/clang++-21 /usr/bin/clang++ && ln -sf /usr/bin/clang-21 /usr/bin/clang \
 && echo "export CXX=clang++" >> /etc/profile \
 && echo "export CC=clang" >> /etc/profile
